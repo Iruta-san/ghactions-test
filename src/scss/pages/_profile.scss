@@ -1,0 +1,960 @@
+.profile {
+	position: relative;
+	padding-top: vmin(5);
+	padding-bottom: vmin(20);
+
+	&__top {
+		display: flex;
+		align-items: center;
+		margin-bottom: vmin(37);
+
+		@include laptop {
+			margin-bottom: px(46);
+		}
+	}
+
+	&__media {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: vmin(12);
+		border-radius: 50%;
+		padding-top: vmin(7);
+		width: vmin(48);
+		height: vmin(48);
+		font-size: vmin(24);
+		line-height: vmin(29);
+		background: $color-green;
+		flex: 0 0 auto;
+
+		img {
+			border-radius: 50%;
+			width: 100%;
+			height: 100%;
+			max-width: none;
+			font-family: "object-fit: cover;";
+			object-fit: cover;
+
+			&[src=""] {
+				display: none;
+			}
+		}
+
+		@include laptop {
+			margin-right: px(16);
+			padding-top: px(8);
+			width: px(72);
+			height: px(72);
+			font-size: px(36);
+			line-height: px(43);
+		}
+
+		@include dirRtl {
+			margin-right: 0;
+			margin-left: vmin(12);
+
+			@include laptop {
+				margin-left: vmin(16);
+			}
+		}
+	}
+
+	&__media-file {
+		position: absolute;
+		right: vmin(-6);
+		bottom: vmin(-6);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		padding: 0 vmin(5);
+		width: vmin(24);
+		height: vmin(24);
+		color: rgba($color-black, 0.2);
+		background-color: $color-white;
+		cursor: pointer;
+
+		@include laptop {
+			right: 0;
+			bottom: 0;
+			padding: 0 px(5);
+			width: px(24);
+			height: px(24);
+		}
+
+		@include dirRtl {
+			left: vmin(-6);
+			right: auto;
+
+			@include laptop {
+				left: px(-6);
+			}
+		}
+	}
+
+	&__title {
+		font-size: vmin(24);
+		line-height: vmin(24);
+
+		@include laptop {
+			margin-top: 0;
+			font-size: px(48);
+			line-height: px(48);
+		}
+	}
+
+	&__form {
+		@include laptop {
+			max-width: px(456);
+		}
+	}
+
+	&__group {
+		&:not(:last-child) {
+			margin-bottom: vmin(66);
+
+			@include laptop {
+				margin-bottom: px(66);
+			}
+		}
+
+		&-title {
+			margin: 0 0 vmin(32);
+			font-size: vmin(24);
+			line-height: vmin(24);
+
+			@include laptop {
+				margin-bottom: px(32);
+				font-size: px(24);
+				line-height: px(24);
+			}
+		}
+
+		&-button {
+			// stylelint-disable-next-line
+			margin-top: 0 !important;
+			margin-left: auto;
+
+			@include dirRtl {
+				margin-right: auto;
+				margin-left: 0;
+			}
+		}
+	}
+
+	&__tab {
+		position: relative;
+		font-size: vmin(24);
+		line-height: vmin(24);
+		letter-spacing: vmin(0.2);
+		color: rgba($color-white, 0.6);
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: vmin(-8);
+			border-bottom: 1px solid $color-white;
+			width: 0;
+			transition: $duration-normal;
+
+			@include laptop {
+				bottom: px(-8);
+			}
+
+			@include dirRtl {
+				left: auto;
+				right: 0;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: vmin(24);
+
+			@include laptop {
+				margin-right: px(24);
+			}
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: vmin(24);
+
+				@include laptop {
+					margin-left: px(24);
+				}
+			}
+		}
+
+		@include laptop {
+			font-size: px(24);
+			line-height: px(24);
+			letter-spacing: px(0.2);
+		}
+
+		@include hover {
+			color: $color-white;
+		}
+
+		@include active {
+			color: $color-white;
+
+			&::before {
+				width: 100%;
+			}
+		}
+	}
+
+	&__button {
+		position: relative;
+		display: inline-flex;
+		border-radius: 2px;
+		padding: vmin(14) vmin(60) vmin(15);
+		width: 100%;
+		font-size: vmin(20);
+		line-height: vmin(20);
+		text-align: center;
+		color: $color-white;
+		background-color: $color-gold;
+
+		&-event {
+			font-family: $font-secondary;
+			font-weight: 600;
+			font-size: vmin(12);
+			line-height: vmin(15);
+			color: $color-white;
+
+			&:not(:last-child) {
+				margin-right: vmin(24);
+
+				@include laptop {
+					margin-right: px(42);
+				}
+
+				@include dirRtl {
+					margin-right: 0;
+					margin-left: vmin(24);
+
+					@include laptop {
+						margin-left: px(42);
+					}
+				}
+			}
+
+			svg {
+				width: vmin(18);
+				height: vmin(18);
+
+				@include laptop {
+					width: px(18);
+					height: px(18);
+				}
+			}
+
+			@include laptop {
+				font-size: px(12);
+				line-height: px(15);
+			}
+		}
+
+		@include laptop {
+			padding: px(14) px(65);
+			width: auto;
+			font-size: px(20);
+			line-height: px(20);
+		}
+
+		@include hover {
+			background-color: $color-yellow3;
+		}
+	}
+
+	@include laptop {
+		padding-top: px(3);
+		padding-bottom: px(82);
+	}
+}
+
+.profile-tabs {
+	&__top {
+		display: inline-flex;
+		align-items: center;
+		margin-bottom: vmin(25);
+		border-bottom: 1px solid rgba($color-white, 0.2);
+		padding-bottom: vmin(8);
+
+		@include laptop {
+			margin-bottom: px(18);
+			padding-bottom: px(8);
+		}
+	}
+}
+
+.profile-order-table {
+	margin-top: vmin(32);
+	width: 100%;
+
+	&__col {
+		flex: 1;
+
+		.profile-order-table__col-head {
+			@include laptop {
+				display: none;
+			}
+		}
+
+		&-head {
+			flex: 1 0 100%;
+			max-width: 100%;
+			font-family: $font-secondary;
+			font-weight: 600;
+			font-size: vmin(12);
+			line-height: vmin(15);
+			color: rgba($color-white, 0.3);
+			transition: $duration-normal;
+
+			@include laptop {
+				font-size: px(12);
+				line-height: px(15);
+				opacity: 0;
+			}
+		}
+
+		span {
+			display: block;
+			margin-top: px(4);
+		}
+
+		&--num {
+			@include laptop {
+				padding-left: px(5);
+				max-width: px(45);
+				text-align: left;
+
+				@include dirRtl {
+					padding-right: px(5);
+					padding-left: 0;
+					text-align: right;
+				}
+
+				@media (min-width: 1300px) {
+					padding-left: px(24);
+					max-width: px(83);
+
+					@include dirRtl {
+						padding-right: px(24);
+						padding-left: 0;
+					}
+				}
+			}
+
+			@include dirRtl {
+				text-align: right;
+			}
+		}
+
+		&--login {
+			display: flex;
+			flex: 0;
+			flex-wrap: wrap;
+			align-items: center;
+			min-width: px(147);
+
+			span {
+				display: inline-block;
+				overflow: hidden;
+				max-width: px(147);
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				transition: $duration-normal;
+
+				&.arabic {
+					direction: ltr;
+				}
+			}
+
+			@include mobile {
+				flex: 1 0 vmin(155);
+				order: 4;
+				margin-top: vmin(9);
+				min-width: vmin(155);
+				max-width: vmin(165);
+
+				span {
+					max-width: vmin(165);
+				}
+			}
+		}
+
+		&--amount {
+			flex: 1 0 auto;
+			margin: 0 vmin(10);
+			padding-left: vmin(8);
+			max-width: vmin(150);
+			white-space: nowrap;
+			text-align: right;
+
+			@include laptop {
+				margin: 0;
+				padding-left: px(8);
+				max-width: px(80);
+			}
+
+			@include dirRtl {
+				padding-right: vmin(8);
+				padding-left: 0;
+
+				@include laptop {
+					padding-right: px(8);
+				}
+			}
+		}
+
+		&--price {
+			margin: 0;
+			padding-right: vmin(16);
+			padding-left: 0;
+			width: 100%;
+			max-width: vmin(99);
+			white-space: nowrap;
+			text-align: right;
+
+			@include mobile {
+				flex: 1 0 auto;
+			}
+
+			@include laptop {
+				margin: 0;
+				padding-right: 0;
+				padding-left: px(8);
+				max-width: px(95);
+			}
+
+			@include dirRtl {
+				padding-right: 0;
+				padding-left: vmin(16);
+
+				@include laptop {
+					padding-right: px(8);
+					padding-left: 0;
+				}
+			}
+		}
+
+		&--status {
+			text-align: right;
+
+			@include mobile {
+				order: 4;
+				margin-top: vmin(9);
+			}
+		}
+	}
+
+	&__top {
+		display: none;
+
+		.profile-order-table__arrow {
+			margin-top: 0;
+			height: 10px;
+		}
+
+		@include laptop {
+			display: flex;
+			align-items: center;
+			padding: px(9) 0;
+			font-family: $font-secondary;
+			font-weight: 600;
+			font-size: px(12);
+			line-height: px(15);
+		}
+	}
+
+	&__container {
+		margin-bottom: vmin(3);
+
+		@include laptop {
+			margin-bottom: px(9);
+		}
+	}
+
+	&__heading {
+		position: relative;
+		overflow: hidden;
+		transition: $duration-normal;
+		cursor: pointer;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -1;
+			background: rgba($color-white, 0.2);
+			opacity: 0;
+			transition: $duration-normal;
+		}
+
+		* {
+			transition: $duration-normal * 0.5;
+		}
+
+		.profile-order-table__col--price {
+			@include mobile {
+				padding-right: vmin(30);
+
+				@include dirRtl {
+					padding-right: 0;
+					padding-left: vmin(30);
+				}
+			}
+		}
+
+		.profile-order-table__col--status {
+			margin-right: 0;
+
+			@include laptop {
+				margin-right: px(28);
+
+				@include dirRtl {
+					margin-right: 0;
+					margin-left: px(28);
+				}
+
+				@media (min-width: 1300px) {
+					margin-right: px(64);
+
+					@include dirRtl {
+						margin-right: 0;
+						margin-left: px(64);
+					}
+				}
+			}
+		}
+
+		.profile-order-table__arrow {
+			position: absolute;
+			right: 0;
+			top: vmin(30);
+
+			@include laptop {
+				top: px(27);
+			}
+
+			@include dirRtl {
+				left: 0;
+				right: auto;
+			}
+		}
+
+		@include active {
+			margin: vmin(10) vmin(-24) 0;
+			border-radius: 3px 3px 0 0;
+			padding: vmin(24) vmin(24) vmin(16);
+
+			&::after,
+			&::before {
+				opacity: 1;
+			}
+
+			.profile-order-table__content {
+				padding-top: vmin(24);
+
+				@include laptop {
+					padding-top: px(14);
+				}
+			}
+
+			.profile-order-table__platform {
+				margin-left: 0;
+
+				@include mobile {
+					order: 2;
+				}
+			}
+
+			.profile-order-table__platform,
+			.profile-order-table__col-head {
+				opacity: 1;
+			}
+
+			.profile-order-table__col-head {
+				display: block;
+			}
+
+			.profile-order-table__devider {
+				padding: 0;
+
+				@include laptop {
+					padding: 0 px(24);
+				}
+			}
+
+			.profile-order-table__devider-line {
+				opacity: 0;
+			}
+
+			.profile-order-table__col--login {
+				min-width: px(147);
+
+				span {
+					display: inline-block;
+					max-width: px(120);
+				}
+
+				@include mobile {
+					max-width: vmin(155);
+
+					span {
+						max-width: vmin(130);
+					}
+				}
+			}
+
+			.profile-order-table__col--price {
+				@include mobile {
+					padding-right: vmin(7);
+
+					@include dirRtl {
+						padding-right: 0;
+						padding-left: vmin(7);
+					}
+				}
+			}
+
+			.profile-order-table__arrow {
+				position: absolute;
+				right: vmin(22);
+				top: vmin(15);
+				margin-top: vmin(10);
+				transform: scale(1, -1);
+
+				@include laptop {
+					right: 0;
+					top: px(11);
+					margin-top: px(10);
+				}
+
+				@include dirRtl {
+					left: vmin(22);
+					right: auto;
+
+					@include laptop {
+						left: 0;
+					}
+				}
+			}
+
+			.profile-order-table__col--num {
+				text-align: left;
+
+				@include dirRtl {
+					text-align: right;
+				}
+			}
+
+			@include laptop {
+				margin: 0;
+				padding: px(16) 0 px(11);
+			}
+		}
+	}
+
+	&__body {
+		position: relative;
+		overflow: hidden;
+		border-radius: 0 0 3px 3px;
+		padding: vmin(7) vmin(24) vmin(24);
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -1;
+			background: rgba($color-white, 0.2);
+			opacity: 0;
+			transition: $duration-normal;
+
+			// backdrop-filter: blur(48px);
+		}
+
+		@include laptop {
+			padding: px(7) px(24) px(24);
+		}
+
+		@include active {
+			margin: 0 vmin(-24) 0;
+
+			&::before {
+				opacity: 1;
+			}
+
+			.form__group {
+				margin-top: vmin(28);
+
+				.form__col {
+					&:not(:first-child) {
+						margin-top: vmin(28);
+					}
+				}
+
+				&:last-child {
+					margin-top: vmin(24);
+				}
+
+				@include laptop {
+					margin-top: px(40);
+
+					.form__col {
+						&:not(:first-child) {
+							margin-top: 0;
+						}
+					}
+
+					&:last-child {
+						margin-top: px(24);
+					}
+				}
+			}
+
+			.profile__button {
+				padding: vmin(14) vmin(55);
+
+				@include laptop {
+					padding: px(14) px(55);
+				}
+			}
+
+			@include laptop {
+				margin: 0 0 px(16);
+			}
+		}
+	}
+
+	&__devider {
+		display: flex;
+		align-items: center;
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(12);
+		line-height: vmin(15);
+		white-space: nowrap;
+		color: rgba($color-white, 0.6);
+		transition: $duration-normal;
+
+		&-line {
+			margin-left: vmin(10);
+			width: 100%;
+			height: 1px;
+			background: rgba($color-white, 0.2);
+			transition: $duration-normal;
+
+			@include laptop {
+				margin-left: px(10);
+			}
+
+			@include dirRtl {
+				margin-right: vmin(10);
+				margin-left: 0;
+
+				@include laptop {
+					margin-right: px(10);
+				}
+			}
+		}
+
+		@include laptop {
+			font-size: px(12);
+			line-height: px(15);
+		}
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		padding: vmin(9) 0;
+		font-size: vmin(18);
+		line-height: vmin(18);
+
+		@include mobile {
+			flex-wrap: wrap;
+		}
+
+		@include laptop {
+			padding: px(9) 0;
+			font-size: px(15);
+			line-height: px(17);
+
+			@media (min-width: 1300px) {
+				font-size: px(18);
+				line-height: px(18);
+			}
+		}
+	}
+
+	&__platform {
+		margin-right: vmin(8);
+		margin-left: vmin(-24);
+		width: vmin(16);
+		height: vmin(16);
+		opacity: 0;
+		transition: $duration-normal;
+
+		@include laptop {
+			margin-right: px(8);
+			margin-left: px(-24);
+			width: px(16);
+			height: px(16);
+		}
+
+		@include dirRtl {
+			margin-right: vmin(-24);
+			margin-left: vmin(8);
+
+			@include laptop {
+				margin-right: px(-24);
+				margin-left: px(8);
+			}
+		}
+	}
+
+	&__arrow {
+		margin: vmin(11) 0 0 0;
+		padding: 0 vmin(6);
+		width: vmin(26);
+		height: vmin(14);
+		color: $color-white;
+		transition: $duration-normal;
+
+		svg {
+			width: vmin(16);
+			height: vmin(12);
+
+			@include laptop {
+				width: px(16);
+				height: px(12);
+			}
+		}
+
+		@include laptop {
+			margin: 0 0 0 px(24);
+			padding: 0 px(4);
+			width: px(24);
+			height: px(14);
+
+			@include dirRtl {
+				margin-right: px(24);
+				margin-left: 0;
+			}
+
+			@media (min-width: 1300px) {
+				margin: 0 px(16) 0 px(24);
+
+				@include dirRtl {
+					margin-right: px(24);
+					margin-left: px(16);
+				}
+			}
+		}
+	}
+
+	&__progress {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		img {
+			margin-left: vmin(10);
+			max-width: vmin(24);
+			max-height: vmin(24);
+
+			@include dirRtl {
+				margin-right: px(10);
+				margin-left: 0;
+			}
+
+			@include laptop {
+				margin-left: px(5);
+				max-width: px(16);
+				max-height: px(16);
+
+				@include dirRtl {
+					margin-right: px(5);
+					margin-left: 0;
+				}
+
+				@media (min-width: 1300px) {
+					margin-left: px(10);
+					max-width: px(24);
+					max-height: px(24);
+
+					@include dirRtl {
+						margin-right: px(10);
+						margin-left: 0;
+					}
+				}
+			}
+		}
+
+		&--created {
+			img {
+				display: none;
+			}
+		}
+
+		&--progress {
+			color: $color-blue;
+
+			img {
+				animation: spin 2s linear infinite;
+			}
+		}
+
+		&--warning {
+			color: $color-warnig;
+		}
+
+		&--success {
+			color: $color-success;
+		}
+
+		@include dirRtl {
+			justify-content: flex-start;
+		}
+	}
+
+	&__form {
+		.input__view {
+			top: vmin(26);
+
+			@include laptop {
+				top: px(26);
+			}
+		}
+
+		.input__input {
+			padding: vmin(20) vmin(12) vmin(14);
+			height: vmin(52);
+
+			@include laptop {
+				padding: px(20) px(12) px(14);
+				height: px(52);
+			}
+		}
+	}
+
+	@include laptop {
+		margin-top: px(32);
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

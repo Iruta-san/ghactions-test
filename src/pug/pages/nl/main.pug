@@ -1,0 +1,63 @@
+section.main.site__col-12.site__col-lg-7.site__col-xl-6.site__col-xxl-5.offset-xl-1.offset-xxl-2
+	h1.site__title.site__title--1
+		| SNEL EN VEILIG&nbsp;
+		br
+		| JOUW FUT 21 MUNTEN AANKOPEN
+	include ../mainCalc
+	//.main__content
+	//	a.btn.main__button.js-buy(href=`${url}order.html`)
+	//		span.btn__content
+	//			| MUNTEN KOPEN
+	//	svg.main__content-icon.for-laptop(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 42 12")
+	//		path(d="M.99 5.26l3.509 5.717M.989 5.26L6.123.798M.99 5.26c16.65 2.164 34.038.884 40.65-.026" fill="none" stroke="#E5B713")
+	//	svg.main__content-icon.for-mobile(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 24")
+	//		path(d="M5.886.778L.583 4.887M5.886.777l4.992 4.618M5.886.778C5.886 18.5 18 23.5 30 23.5" fill="none" stroke="#E5B713")
+	//	.main__content-text
+	//		| Ons systeem is volledig geautomatiseerd, #[br]wij leveren de munten op ieder moment, 24u/24 en 7d/7
+
+	.main__info
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/purple.svg` alt="Figure")
+			.main__card-title DE VEILIGSTE OPTIE
+			.main__card-text Maak je geen zorgen over de mogelijke sancties van EA. Wij werken met een verhoogd algoritme. Tijdens de bestelling kan 1 aanbieder slechts 1 spelerskaart kopen.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/blue.svg` alt="Figure")
+			.main__card-title SNEL EN EENVOUDIG
+			.main__card-text Ons systeem is volledig geautomatiseerd, wij leveren de munten dus zo snel mogelijk. Slechts in een paar klikken - wij doen de rest.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/red.svg` alt="Figure")
+			.main__card-title GEWELDIGE ERVARING
+			.main__card-text Wij verkopen al munten sinds het begin van FIFA 17, maar enkel aan groothandelskopers. Gezien alle goede ervaringen bieden wij het allerbeste product voor FUT-spelers.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/yellow.svg` alt="Figure")
+			.main__card-title DE LAAGSTE PRIJZEN
+			.main__card-text Eventuele toeslagen worden door ons vergoed. Onze prijzen behoren tot de laagste op internet.
+
+	.main__buy
+		.main__buy-head
+			.main__buy-title HOE WERKT DE
+				|  #[span  COMFORT RUIL ] LEVERING?
+			//a.main__buy-button See how transfer mode works
+		.main__buy-container
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 1
+				.main__buy-text
+					| Kies het platform en het aantal munten.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 2
+				.main__buy-text
+					| Voer je e-mailadres, wachtwoord, en backup codes in.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 3
+				.main__buy-text
+					| De munten bevinden zich in je FUT-club. Veel game-plezier!
+
+	include ./faq
+	script(async src="https://f.royalfut.com/2abe5b48d2731f8b7232d53248d2ef44.js")

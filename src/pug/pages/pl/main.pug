@@ -1,0 +1,63 @@
+section.main.site__col-12.site__col-lg-7.site__col-xl-6.site__col-xxl-5.offset-xl-1.offset-xxl-2
+	h1.site__title.site__title--1
+		| KUPUJ MONETY FUT 21
+		br
+		| SZYBKO I BEZPIECZNIE
+	include ../mainCalc
+	//.main__content
+	//	a.btn.main__button.js-buy(href=`${url}order.html`)
+	//		span.btn__content
+	//			| KUPUJ MONETY
+	//	svg.main__content-icon.for-laptop(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 42 12")
+	//		path(d="M.99 5.26l3.509 5.717M.989 5.26L6.123.798M.99 5.26c16.65 2.164 34.038.884 40.65-.026" fill="none" stroke="#E5B713")
+	//	svg.main__content-icon.for-mobile(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 24")
+	//		path(d="M5.886.778L.583 4.887M5.886.777l4.992 4.618M5.886.778C5.886 18.5 18 23.5 30 23.5" fill="none" stroke="#E5B713")
+	//	.main__content-text
+	//		| Nasz system jest w pełni zautomatyzowany, #[br]a więc dostarczamy monety o każdej porze dnia, 24/7.
+
+	.main__info
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/purple.svg` alt="Figure")
+			.main__card-title NAJBEZPIECZNIEJSZA OPCJA
+			.main__card-text Nie musisz się martwić o konsekwencje ze strony EA. Korzystamy z ulepszonego algorytmu, dzięki któremu podczas realizacji zamówienia jeden dostawca kupuje tylko jedną kartę zawodnika.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/blue.svg` alt="Figure")
+			.main__card-title SZYBKO I BEZPIECZNIE
+			.main__card-text Nasz system jest w pełni zautomatyzowany, a więc dostarczamy monety tak szybko, jak to tylko możliwe. Wystarczy kilka kliknięć, my zajmiemy się resztą.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/red.svg` alt="Figure")
+			.main__card-title ZAAWANSOWANY SYSTEM
+			.main__card-text Sprzedajemy monety od czasów FIFA 17, ale dotąd robiliśmy to jedynie hurtowo. Biorąc pod uwagę całość oferty, mamy najlepszy produkt dla użytkowników FUT.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/yellow.svg` alt="Figure")
+			.main__card-title NAJNIŻSZE CENY
+			.main__card-text Pokrywamy wszelkie opłaty dodatkowe. Mamy jedne z najniższych cen w całym Internecie.  Otwieranie paczek jest o 50% tańsze za monety niż points FIFA.
+
+	.main__buy
+		.main__buy-head
+			.main__buy-title JAK DZIAŁA DOSTAWA
+				|  #[span  COMFORT TRADE]?
+			//a.main__buy-button See how transfer mode works
+		.main__buy-container
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 1
+				.main__buy-text
+					| Wybierz platformę i ilość monet.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 2
+				.main__buy-text
+					| Wpisz swój e-mail, hasło i kody zapasowe.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 3
+				.main__buy-text
+					| Monety są na twoim klubie FUT. Miłej gry!
+
+	include ./faq
+	script(async src="https://f.royalfut.com/2abe5b48d2731f8b7232d53248d2ef44.js")

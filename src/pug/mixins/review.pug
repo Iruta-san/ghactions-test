@@ -1,0 +1,30 @@
+mixin review(data)
+	article.review&attributes(attributes)
+		unless data.stars
+			- data.stars = 5
+		.review__content
+			if data.title
+				.review__title!= data.title
+			if data.text
+				.review__text!= data.text
+			
+			.review__description
+				if data.star
+					.review__rated
+						!=content[locale].commentRated
+						| &nbsp;
+						!=data.star
+						| &nbsp;
+						b
+							!=content[locale].commentOut
+							| &nbsp;5
+				else
+					.review__rated
+						!=content[locale].commentRated
+						| &nbsp;5&nbsp;
+						b
+							!=content[locale].commentOut
+							| &nbsp;5
+				.review__name
+					span.review__name-text!= data.name
+					img.review__name-image(src=`${baseDir}images/comment/${data.image}` alt=data.name)

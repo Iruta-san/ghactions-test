@@ -1,0 +1,132 @@
+.social-login {
+	margin-top: vmin(24);
+	@include laptop {
+		margin-top: px(24);
+	}
+	&--signin {
+		margin-top: 0;
+		margin-bottom: vmin(24);
+		@include laptop {
+			margin-bottom: px(24);
+		}
+	}
+
+	&__text {
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(13);
+		line-height: vmin(16);
+		margin-bottom: vmin(16);
+		@include laptop {
+			font-size: px(13);
+			line-height: px(16);
+			margin-bottom: px(16);
+		}
+		&--or {
+			margin-top: vmin(24);
+			@include laptop {
+				margin-top: px(24);
+			}
+		}
+	}
+
+	&__item {
+		display: flex;
+	}
+
+	&__link {
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(24px);
+		border-radius: vmin(4);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: vmin(10);
+		width: 100%;
+		height: vmin(52);
+		@include laptop {
+			border-radius: px(4);
+			padding: px(10);
+			height: px(52);
+		}
+	}
+
+	&__link--fb {
+		margin-right: 8px;
+	}
+
+	&__forgot {
+		margin: vmin(24) 0 0;
+		@include laptop {
+			margin: px(24) 0 0;
+		}
+	}
+
+	&__forgot-link {
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(13);
+		line-height: vmin(16);
+		color: $color-yellow2;
+		@include laptop {
+			font-size: px(13);
+			line-height: px(16);
+		}
+	}
+
+	&__forgot {
+		position: relative;
+	}
+
+	&__check {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+
+	&__label {
+		font-family: $font-secondary;
+		position: relative;
+		// padding-left: px(32);
+		font-weight: 600;
+		font-size: vmin(13);
+		line-height: vmin(16);
+		color: $color-yellow2;
+		display: inline-flex;
+		vertical-align: middle;
+		align-items: center;
+		margin-right: vmin(2);
+
+		svg {
+			width: vmin(24);
+			height: vmin(24);
+			margin-right: vmin(4);
+		}
+
+		@include laptop {
+			font-size: px(13);
+			line-height: px(16);
+			margin-right: px(2);
+			svg {
+				width: px(24);
+				height: px(24);
+				margin-right: px(4);
+			}
+		}
+	}
+
+	&__link-check {
+		font-family: $font-secondary;
+		// font-weight: 600;
+		font-size: vmin(12);
+		line-height: vmin(15);
+		color: $color-yellow2;
+		display: inline-flex;
+		vertical-align: middle;
+		@include laptop {
+			font-size: px(13);
+			line-height: px(16);
+		}
+	}
+}

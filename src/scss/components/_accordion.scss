@@ -1,0 +1,116 @@
+.js-accordion {
+	// Hide collapsed content
+	[aria-hidden="true"] {
+		display: none;
+	}
+}
+
+.accordion {
+	position: relative;
+
+	&__container {
+		padding-bottom: vmin(16);
+
+		&:first-child {
+			margin-top: vmin(-16);
+
+			@include laptop {
+				margin-top: px(-16);
+			}
+		}
+
+		@include laptop {
+			padding-bottom: px(16);
+		}
+	}
+
+	&__heading {
+		.btn {
+			position: relative;
+			display: block;
+			border-bottom: 1px solid rgba($color-gray, 0.2);
+			padding: vmin(16) 0;
+			width: 100%;
+			font-size: vmin(24);
+			line-height: vmin(24);
+			text-align: left;
+			text-decoration: none;
+			color: $color-white;
+			transition: 0s;
+			will-change: border-color;
+
+			a {
+				text-decoration: underline;
+
+				@include hover {
+					text-decoration: none;
+				}
+			}
+
+			@include laptop {
+				padding: px(16) 0;
+				font-size: px(24);
+				line-height: px(24);
+			}
+
+			@include dirRtl {
+				text-align: right;
+			}
+
+			@include hover {
+				border-bottom-color: $color-gray;
+				transition: $duration-normal;
+			}
+
+			// Active heading link styles
+			@include active {
+				border-bottom-color: transparent;
+
+				@include hover {
+					border-bottom-color: transparent;
+				}
+			}
+		}
+	}
+
+	&__content {
+		border-bottom: 1px solid transparent;
+		font-family: $font-secondary;
+		font-weight: 500;
+		font-size: vmin(14);
+		line-height: vmin(18);
+		letter-spacing: -0.02em;
+		color: rgba($color-white, 0.8);
+		will-change: border-color;
+
+		p {
+			margin: vmin(17) 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			@include laptop {
+				margin: px(17) 0;
+			}
+		}
+
+		a {
+			text-decoration: underline;
+
+			@include hover {
+				text-decoration: none;
+				color: $color-white;
+			}
+		}
+
+		@include laptop {
+			font-size: px(14);
+			line-height: px(18);
+		}
+
+		@include active {
+			border-bottom-color: rgba($color-gray, 0.2);
+		}
+	}
+}

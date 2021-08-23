@@ -1,0 +1,63 @@
+section.main.site__col-12.site__col-lg-7.site__col-xl-6.site__col-xxl-5.offset-xl-1.offset-xxl-2
+	h1.site__title.site__title--1
+		| COMPRA SUS MONEDAS FUT 21
+		br
+		| DE FORMA RÁPIDA Y SEGURA
+	include ../mainCalc
+	//.main__content
+	//	a.btn.main__button.js-buy(href=`${url}order.html`)
+	//		span.btn__content
+	//			| COMPRAR MONEDAS
+	//	svg.main__content-icon.for-laptop(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 42 12")
+	//		path(d="M.99 5.26l3.509 5.717M.989 5.26L6.123.798M.99 5.26c16.65 2.164 34.038.884 40.65-.026" fill="none" stroke="#E5B713")
+	//	svg.main__content-icon.for-mobile(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 24")
+	//		path(d="M5.886.778L.583 4.887M5.886.777l4.992 4.618M5.886.778C5.886 18.5 18 23.5 30 23.5" fill="none" stroke="#E5B713")
+	//	.main__content-text
+	//		| Nuestro sistema está totalmente automatizado, #[br]por lo que suministramos monedas las 24 horas del día.
+
+	.main__info
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/purple.svg` alt="Figure")
+			.main__card-title LA OPCIÓN MÁS SEGURA
+			.main__card-text No se preocupe de posibles sanciones de EA. Trabajamos con un algoritmo mejorado en virtud del cual cada proveedor solo compra una carta de jugador durante la ejecución del pedido.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/blue.svg` alt="Figure")
+			.main__card-title RÁPIDO Y SENCILLO
+			.main__card-text Nuestro sistema está totalmente automatizado, por lo que suministramos monedas prácticamente al instante. Basta con que haga un par de clics: ¡nosotros nos encargamos de todo lo demás!
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/red.svg` alt="Figure")
+			.main__card-title AMPLIA EXPERIENCIA
+			.main__card-text Aunque llevamos vendiendo monedas desde la época de «FIFA 17», hasta ahora los destinatarios eran compradores mayoristas. Toda esta experiencia nos permite ofrecer el mejor producto a los usuarios de FUT.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/yellow.svg` alt="Figure")
+			.main__card-title LOS PRECIOS MÁS BAJOS
+			.main__card-text Nosotros corremos con todas las comisiones. Nuestros precios son los más bajos de internet.
+
+	.main__buy
+		.main__buy-head
+			.main__buy-title FUNCIONAMIENTO DE LA ENTREGADE
+				|  #[span  TRADEO CÓMODO]
+			//a.main__buy-button See how transfer mode works
+		.main__buy-container
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 1
+				.main__buy-text
+					| Elija la plataforma y la cantidad de monedas.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 2
+				.main__buy-text
+					| Indique su correo electrónico, su contraseña y sus códigos de copia de seguridad.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 3
+				.main__buy-text
+					| Las monedas ya están en su club de FUT. ¡Que disfrute del partido!
+
+	include ./faq
+	script(async src="https://f.royalfut.com/2abe5b48d2731f8b7232d53248d2ef44.js")

@@ -1,0 +1,63 @@
+section.main.site__col-12.site__col-lg-7.site__col-xl-6.site__col-xxl-5.offset-xl-1.offset-xxl-2
+	h1.site__title.site__title--1
+		| 购买FUT 21金币
+		br
+		| 快速安全
+	include ../mainCalc
+	//.main__content
+	//	a.btn.main__button.js-buy(href=`${url}order.html`)
+	//		span.btn__content
+	//			| 购买金币
+	//	svg.main__content-icon.for-laptop(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 42 12")
+	//		path(d="M.99 5.26l3.509 5.717M.989 5.26L6.123.798M.99 5.26c16.65 2.164 34.038.884 40.65-.026" fill="none" stroke="#E5B713")
+	//	svg.main__content-icon.for-mobile(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 24")
+	//		path(d="M5.886.778L.583 4.887M5.886.777l4.992 4.618M5.886.778C5.886 18.5 18 23.5 30 23.5" fill="none" stroke="#E5B713")
+	//	.main__content-text
+	//		| 我们的系统是全自动的，#[br]将为您提供 7x24 小时全天候金币实时交付。
+
+	.main__info
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/purple.svg` alt="Figure")
+			.main__card-title 安全至上
+			.main__card-text 不必担心被 EA 处罚。我们采用了改进算法，在处理您的订单时，每个供应商只购买 1 张球员卡。
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/blue.svg` alt="Figure")
+			.main__card-title 快速便捷
+			.main__card-text 我们的系统是全自动的，所以我们将以最快速度交付金币。您只需点击几下，剩下的全都交给我们。
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/red.svg` alt="Figure")
+			.main__card-title 经验丰富
+			.main__card-text 我们自 FIFA 17 起便向批发买家销售金币。凭借我们的经验，我们将为 FUT 用户提供最好的产品。
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/yellow.svg` alt="Figure")
+			.main__card-title 全网低价
+			.main__card-text 一切手续费将由我们承担。我们的价格是全网最优惠的。与FIFA积分相比，使用我们的金币开包的价格便宜50%。
+
+	.main__buy
+		.main__buy-head
+			.main__buy-title
+				|  #[span  舒适交易交 ] 付如何运作？
+			//a.main__buy-button See how transfer mode works
+		.main__buy-container
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 1
+				.main__buy-text
+					| 选择平台和金币数量。
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 2
+				.main__buy-text
+					| 输入您的电子邮件、密码和备用代码。
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 3
+				.main__buy-text
+					| 金币在您的 FUT 俱乐部中，游戏快乐！
+
+	include ./faq
+	script(async src="https://f.royalfut.com/2abe5b48d2731f8b7232d53248d2ef44.js")

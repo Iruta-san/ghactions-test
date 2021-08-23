@@ -1,0 +1,63 @@
+section.main.site__col-12.site__col-lg-7.site__col-xl-6.site__col-xxl-5.offset-xl-1.offset-xxl-2
+	h1.site__title.site__title--1
+		| БЫСТРАЯ И БЕЗОПАСНАЯ&nbsp;
+		br
+		| ПОКУПКА МОНЕТ #[br.for-mobile]FUT 21
+	include ../mainCalc
+	//.main__content
+	//	a.btn.main__button.js-buy(href=`${url}order.html`)
+	//		span.btn__content
+	//			| Купить монеты
+	//	svg.main__content-icon.for-laptop(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 42 12")
+	//		path(d="M.99 5.26l3.509 5.717M.989 5.26L6.123.798M.99 5.26c16.65 2.164 34.038.884 40.65-.026" fill="none" stroke="#E5B713")
+	//	svg.main__content-icon.for-mobile(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 24")
+	//		path(d="M5.886.778L.583 4.887M5.886.777l4.992 4.618M5.886.778C5.886 18.5 18 23.5 30 23.5" fill="none" stroke="#E5B713")
+	//	.main__content-text
+	//		| Наша система полностью автоматизирована, #[br]поэтому мы доставляем монеты в любое время, 24/7
+
+	.main__info
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/purple.svg` alt="Figure")
+			.main__card-title БЕЗОПАСНО
+			.main__card-text Исключены санкции от EA. Мы работаем по улучшенному алгоритму, где 1 поставщик выкупает только 1 карточку игрока в ходе выполнения вашего заказа.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/blue.svg` alt="Figure")
+			.main__card-title БЫСТРО И ПРОСТО
+			.main__card-text Наша система полностью автоматизирована, благодаря этому доставка монет осуществляется максимально быстро. Всего пара кликов —   остальное сделаем мы.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/red.svg` alt="Figure")
+			.main__card-title ДАВНО НА РЫНКЕ
+			.main__card-text Мы занимались продажей монет ещё со времён FIFA 17, но делали это для оптовых покупателей. Учитывая весь опыт, мы готовы предложить лучший продукт для игроков.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/yellow.svg` alt="Figure")
+			.main__card-title НИЗКИЕ ЦЕНЫ
+			.main__card-text Все комиссии покрываются нами. Наши цены одни из самых низких.
+
+	.main__buy
+		.main__buy-head
+			.main__buy-title КАК РАБОТАЕТ
+				|  #[span  КОМФОРТНАЯ ] ДОСТАВКА?
+			//a.main__buy-button See how transfer mode works
+		.main__buy-container
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 1
+				.main__buy-text
+					| Выберите платформу и количество монет.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 2
+				.main__buy-text
+					| Укажите e-mail, пароль и коды резервной копии.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 3
+				.main__buy-text
+					| Монеты в вашем клубе FUT. Приятной игры!
+
+	include ./faq
+	script(async src="https://f.royalfut.com/2abe5b48d2731f8b7232d53248d2ef44.js")

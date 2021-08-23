@@ -1,0 +1,103 @@
+.contact {
+	&__social {
+		display: flex;
+		align-items: center;
+		margin-bottom: vmin(32);
+		color: $color-gold;
+
+		p {
+			color: $color-white;
+		}
+
+		@include laptop {
+			margin-bottom: px(32);
+		}
+
+		@include mobile {
+			display: block;
+		}
+	}
+
+	&__social-row {
+		display: flex;
+		align-items: center;
+	}
+
+	&__social-col {
+		&:not(:last-child) {
+			margin-right: vmin(24);
+
+			@include laptop {
+				margin-right: px(48);
+			}
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: vmin(24);
+
+				@include laptop {
+					margin-left: px(48);
+				}
+			}
+		}
+
+		@include mobile {
+			display: block;
+		}
+	}
+
+	&__social-btn {
+		display: inline-block;
+		width: vmin(48);
+		height: vmin(48);
+
+		margin-right: vmin(24);
+
+		@include laptop {
+			margin-right: px(48);
+		}
+
+		@include dirRtl {
+			margin-right: 0;
+			margin-left: vmin(24);
+
+			@include laptop {
+				margin-left: px(48);
+			}
+		}
+
+		&--twitter {
+			margin-top: px(-3);
+		}
+
+		@include laptop {
+			width: px(48);
+			height: px(48);
+		}
+
+		@include hover {
+			color: $color-yellow2;
+		}
+	}
+
+	&__email {
+		font-family: $font-primary;
+		font-size: vmin(32);
+		line-height: vmin(32);
+		text-transform: uppercase;
+		color: $color-gold;
+
+		@include laptop {
+			font-size: px(48);
+			line-height: px(48);
+		}
+	}
+
+	p {
+		margin: vmin(16) 0;
+
+		@include laptop {
+			margin: px(16) 0;
+		}
+	}
+}

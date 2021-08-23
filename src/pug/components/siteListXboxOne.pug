@@ -1,0 +1,275 @@
+.site__list.site__list--1
+	.site__page.js-select-page.site__page--first.site__page--platform(data-platform="xbox")
+		.site__tab
+			.site__tab-name
+				em!= content[locale].pagePlatformName
+				em!= content[locale].pagePlatformName2
+			.site__tab-value
+				img.xbox-one(src=`${baseDir}images/order-xbox-one.png` alt="Xbox one icon")
+
+	.site__page.js-select-page(data-id="amount")
+		.site__tab
+			.site__tab-name
+				!= content[locale].pageAmountName
+			.site__tab-value
+
+		.site__content
+			.amount
+				.input__group.input-range.has-active.is-range
+					label.input__label(for="amountCoins")
+						input.input__input.input-thousands#amountCoins(value="100000" min="20000" maxlength="8" type="tel" data-input="coins" inputmode="decimal")
+
+						.input__input-range.input__input-range--gold
+							input#amountCoinsRange(type="range" min="20000" max="1000000" value="100000" step="10000" data-input="coins" list="scaleCoins" data-list-count="5")
+							.slider-fill-lower
+							.slider-fill-upper
+
+						span.input__label-placeholder
+							!= content[locale].pageAmountCoinsLabel
+
+				.input__group.input-range.has-active.is-range
+					label.input__label(for="amountAmount")
+						input.input__input.input-thousands#amountAmount(value="100000" min="20000" type="tel" data-input="amount" inputmode="decimal")
+
+						.input__input-range.input__input-range--red
+							input#amountAmountRange(type="range" min="1" step="0.1" max="1000000" value="100000" data-input="amount" list="scaleAmount" data-list-count="5")
+							.slider-fill-lower
+							.slider-fill-upper
+
+						span.input__label-placeholder
+							!= content[locale].pageAmountAmountLabel
+
+				.input__group
+					button.btn.form__button.js-select-amount(type="button")
+						.btn__content
+							!= content[locale].pageAmountNext
+
+	.site__page.js-select-page(data-id="method")
+		.site__tab
+			.site__tab-name
+				span
+					!= content[locale].pageMethodName
+
+			.site__tab-value
+
+		.site__content
+			.method
+				.method__card.method__card--green
+					.method__card-header
+						.method__card-name
+							!= content[locale].pageMethodCard1Name
+
+					.method__card-content
+						p
+							!= content[locale].pageMethodCard1Text
+
+						button.btn.method__card-button.js-select-method(type="button" data-method="Easy")
+							.btn__content
+								!= content[locale].pageMethodCardBtn
+
+				.method__card.method__card--red.soon
+					.method__card-header
+						.method__card-name
+							!= content[locale].pageMethodCard2Name
+						.method__card-soon
+							!= content[locale].pageMethodCardSoon
+
+					.method__card-content
+						p
+							!= content[locale].pageMethodCard2Text
+
+						button.btn.method__card-button.js-select-method(type="button" data-method="Manual")
+							.btn__content
+								!= content[locale].pageMethodCardBtn
+
+	.site__page.js-select-page(data-id="payment-method")
+		.site__tab
+			.site__tab-name
+				span
+					!= content[locale].pagePaymentMethodName
+
+				.payment-method__secure
+					+svg('lock')
+					span
+						!= content[locale].pagePaymentMethodSafe
+				.payment-method__secure-2
+					img(src="../images/visa.png" alt="" srcset="../images/visa@2x.png 2x")
+					img(src="../images/mastercard.png" alt="" srcset="../images/mastercard@2x.png 2x")
+
+			.site__tab-value
+
+		.site__content
+			.payment-method
+				.payment-method__total
+					.payment-method__total-main
+						.payment-method__total-title
+							!= content[locale].pagePaymentMethodTotalAmount
+						.payment-method__total-value.payment-method__total-value--old#costValueOld
+						.payment-method__total-value#costValue
+					.payment-method__total-coupon
+						button.btn.payment-method__total-coupon-title(type="button")
+							.btn__content
+								!= content[locale].pagePaymentMethodCouponHave
+				.payment-method__coupon-content
+					form.payment-method__coupon-content-inner.js-payment-method-form-coupon(action="/api/order" method="PUT")
+						.js-form-error.is-hidden
+						.js-form-content
+							.input__group.has-active
+								label.input__label(for="promoCode")
+									input.input__input#promoCode(name="promoCode" type="text")
+									span.input__label-placeholder
+										!= content[locale].pagePaymentMethodCoupon
+							.input__group.payment-method__coupon-button
+								button.btn#couponApply(type="submit")
+									.btn__content
+										!= content[locale].pagePaymentMethodCouponApply
+
+				.payment-method__method-wrapper
+					.payment-method__method
+						button.btn.payment-method__button.js-pay(type="button")
+							.btn__content
+								+svg('credit-card')
+								span
+									!= content[locale].pagePaymentMethodPay
+						.payment-method__logos
+							+svg('visa').payment-method__logo.payment-method__logo--visa
+							+svg('master-color').payment-method__logo.payment-method__logo--master
+
+					.payment-method__method#paypal-button
+					//- .payment-method__method
+					//- 	button.btn.payment-method__button
+					//- 		.btn__content
+					//- 			!= content[locale].pagePaymentMethodPay
+					//- 	.payment-method__logos
+					//- 		+svg('paypal').payment-method__logo.payment-method__logo--paypal
+					//- 		+svg('alipay').payment-method__logo.payment-method__logo--alipay
+					//- 		+svg('skrill').payment-method__logo.payment-method__logo--skrill
+				.payment-method__secure-3
+					img(src="../images/visa.png" alt="" srcset="../images/visa@2x.png 2x")
+					img(src="../images/mastercard.png" alt="" srcset="../images/mastercard@2x.png 2x")
+
+	.site__page.js-select-page(data-id="delivery")
+		.site__tab
+			.site__tab-name
+				!= content[locale].pageDeliveryName
+			.site__tab-value
+
+		.site__content
+			.delivery.js-tabs
+				.delivery__status
+					.delivery__status-item.is-active.js-tabs-btn(data-id="formStep1" data-scroll="false" data-always-active="true")
+						a.btn.delivery__status-item-point(role="button")
+							.point
+							span
+								!= content[locale].pageDeliveryTab1
+
+					.delivery__status-item.js-tabs-btn(data-id="formStep2" data-scroll="false")
+						a.btn.delivery__status-item-point(role="button")
+							.point
+							span
+								!= content[locale].pageDeliveryTab2
+
+					.delivery__status-item.js-tabs-btn(data-id="formStep3" data-scroll="false")
+						a.btn.delivery__status-item-point(role="button")
+							.point
+							span
+								!= content[locale].pageDeliveryTab3
+
+					.delivery__status-item.js-tabs-btn(data-id="formStep4" data-scroll="false")
+						a.btn.delivery__status-item-point(role="button")
+							.point
+							span
+								!= content[locale].pageDeliveryTab4
+
+				form.form.form--delivery.js-delivery-form(action="/api/order" method="POST")
+					.form__message.form__message--error.js-form-error-message.is-hidden
+					.form__message.form__message--success.js-form-success-message.is-hidden
+						.text
+							!= content[locale].pageDeliveryFormSuccess
+
+						a.btn.site__tab-button(href=`${url}/profile/#orders`)
+							.btn__content
+								!= content[locale].pageDeliveryFormSuccess
+
+					.js-form-content
+						.delivery__tabs
+							.delivery__tabs-item.js-tabs-content(data-id="formStep1")
+								.delivery__tabs-header
+									.delivery__tabs-name
+										!= content[locale].pageDeliveryContent1Name
+
+									.delivery__tabs-text
+										!= content[locale].pageDeliveryContent1Text
+
+								.delivery__tabs-content
+									fieldset.input__group
+										label.input__label.input__label--email(for="email")
+											input.input__input#email(name="email" type="email" minlength="7" required autocomplete="off" placeholder=`${content[locale].pageDeliveryContent1Email}`)
+											span.input__label-placeholder
+												!= content[locale].pageDeliveryContent1Email
+
+									fieldset.input__group
+										label.input__label.input__label--password(for="password")
+											input.input__input#password(name="password" type="password" minlength="2" required autocomplete="off" placeholder=`${content[locale].pageDeliveryContent1Password}`)
+											span.input__label-placeholder
+												!= content[locale].pageDeliveryContent1Password
+											button.input__view.btn.js-password-view(type="button" title=`${content[locale].pageDeliveryContent1SeePassword}`)
+												.btn__content
+													+svg('eye').eye
+													+svg('eye-close').eye-close
+
+									.delivery__tabs-nav
+										button.btn.form__button.js-tabs-btn.js-delivery-one.js-delivering-btn(type="button" data-id="formStep2" data-scroll="false")
+											.btn__content
+												!= content[locale].pageDeliveryContent1Next
+
+							.delivery__tabs-item.js-tabs-content.is-hidden(data-id="formStep2")
+								.delivery__tabs-header.delivery__tabs-header--2
+									.delivery__tabs-name
+										!= content[locale].pageDeliveryContent2Name
+
+									.delivery__tabs-text
+										!= content[locale].pageDeliveryContent2Text
+
+								.delivery__tabs-content
+									fieldset.input__group.js-delivery-codes
+										label.input__label.input__label--codes(for="reserveCodes" data-length="8")
+											.js-input-codes
+											input.input__input#reserveCodes(name="codes" type="text" inputmode="decimal" minlength="8" placeholder=`${content[locale].pageDeliveryContent2Code}`)
+											label.input__input--masked.is-placeholder(for="reserveCodes")
+												!= content[locale].pageDeliveryContent2Code
+											span.input__label-placeholder
+												!= content[locale].pageDeliveryContent2CodePlaceholder
+
+									.delivery__tabs-nav
+										button.btn.form__button.js-delivery-btn(type="submit")
+											.btn__content
+												!= content[locale].pageDeliveryContent2Next
+
+							.delivery__tabs-item.js-tabs-content.is-hidden(data-id="formStep3")
+								.delivery__tabs-processing-title
+									!= content[locale].pageDeliveryContent3Name
+
+								.delivery__tabs-processing-spin
+									img(src=`${baseDir}images/profile/progress.svg` alt="status")
+
+								.delivery__tabs-processing-transfer
+									img(src=`${baseDir}images/profile/warning2.svg` alt="status")
+									span
+										!= content[locale].pageDeliveryContent3Process1
+
+								.delivery__tabs-processing-alarm
+									img(src=`${baseDir}images/profile/alarm.svg` alt="alarm")
+									span
+										!= content[locale].pageDeliveryContent3Process2
+
+								.trustpilot#trustbox(data-locale!= content[locale].sidebarTrust data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="5fad3b2ca99b2a0001b46f27" data-style-height="52px" data-style-width="100%" data-theme="dark")
+
+if localeRU
+	.site__note
+		.site__text
+			p Сервис ROYALFUT гарантирует безопасность вашего аккаунта при покупке монет ФИФА 21 для XBOX One. Мы не используем ботов для трансфера монет и имеем огромный опыт работы с&nbsp;платформой.
+			ul
+				li Монеты для XBOX One доставляются в пределах 15 минут, вы сразу получаете уведомление по завершению трансфера
+				li Мы предлагаем самые низкие цены на монеты FIFA для платформы XBOX One
+			p Остались вопросы по покупке монет FIFA 21 для XBOX One? Свяжитесь с нами любым удобным способом.

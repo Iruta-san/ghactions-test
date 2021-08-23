@@ -1,0 +1,41 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
+
+$grid-columns: 12;
+$grid-gutter-mobile: 8px;
+$grid-gutter: 32px;
+
+// COLORS
+$color-black: #000;
+$color-white: #fff;
+$color-dark: #12142b;
+$color-dark2: #080c1f;
+$color-gold: #eab11f;
+$color-yellow: #f2b824;
+$color-yellow2: #e5b713;
+$color-yellow3: #ffcf25;
+$color-green: #36b23b;
+$color-red: #ed3f3f;
+$color-red2: #d92b2b;
+$color-light-red: #ff7171;
+$color-gray: #c4c4c4;
+$color-blue: #10a9ff;
+$color-warnig: #f95c52;
+$color-success: #49e300;
+$color-link: #aeb1ff;
+$color-purple: #9b3df6;
+$color-ocean-green: #51b37f;
+$color-waterloo: #818194;
+
+// FONTS
+$font-primary: "BebasNeue", "Helvetica Neue", arial, sans-serif;
+$font-primaryRU: "BebasNeueRU", "Helvetica Neue", arial, sans-serif;
+$font-secondary: "Montserrat", helvetica, arial, sans-serif;
+$font-helvetica: "helvetica";
+$font-oswald: "Oswald";
+
+// EASING TRANSITIONS
+$duration-normal: 0.4s;
+$easing-back-out: cubic-bezier(0.25, 0.74, 0.22, 1.1); // http://cubic-bezier.com/#.25,.74,.22,1.1
+$easing-back-in: cubic-bezier(0.47, -0.1, 0.5, -0.06); // http://cubic-bezier.com/#.47,-0.1,.5,-.06
+$easing-out: ease-out;
+$easing-in: ease-in;

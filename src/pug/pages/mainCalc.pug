@@ -1,0 +1,59 @@
+.main__calc
+    .main__radios-block(data-id="platform")
+        .main__radio
+            input.main__button.js-select-platform#calc-ps(type="radio" name="system" checked data-id="ps4" data-name="PlayStation 4")
+            label.calc-ps-icon(for="calc-ps") Playstation
+
+        .main__radio
+            input.main__button.js-select-platform#calc-xbox(type="radio" name="system" data-id="xbox" data-name="Xbox One")
+            label.calc-xbox-icon(for="calc-xbox") XBOX
+
+    .main__calc-inputs(data-id="amount")
+        div
+            .input__group.has-active.is-range.input__calculate
+                label.input__label(for="amountCoins")
+                    input.input__input.input-thousands#amountCoins(value="100000" min="20000" maxlength="8" type="tel" data-input="coins" inputmode="decimal")
+
+                    .input__input-range.input__input-range--gold(style="display: none")
+                        input#amountCoinsRange(type="range" min="20000" max="1000000" value="100000" step="10000" data-input="coins" list="scaleCoins" data-list-count="5")
+                        .slider-fill-lower
+                        .slider-fill-upper
+
+                    span.input__label-placeholder
+                        != content[locale].pageAmountCoinsLabel
+            .main__count-block
+                button(data-count="250000")
+                    | 250K
+                button(data-count="500000")
+                    | 500K
+                button(data-count="800000")
+                    | 800K
+                button(data-count="1000000")
+                    | 1M
+                button(data-count="2000000")
+                    | 2M
+
+        .input__group.input-range.has-active.is-range.input__calculate
+            label.input__label(for="amountAmount")
+                input.input__input.input-thousands#amountAmount(value="100000" min="20000" type="tel" data-input="amount" inputmode="decimal")
+
+                .input__input-range.input__input-range--red(style="display: none")
+                    input#amountAmountRange(type="range" min="1" step="0.1" max="1000000" value="100000" data-input="amount" list="scaleAmount" data-list-count="5")
+                    .slider-fill-lower
+                    .slider-fill-upper
+
+                span.input__label-placeholder
+                    != content[locale].pageAmountAmountLabel
+
+    .main__content
+        button.btn.main__button.js-buy-main(data-href=`${url}order/`)
+            span.btn__content
+                != content[locale].menuLinkOrder
+
+        svg.main__content-icon.for-laptop(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 42 12")
+            path(d="M.99 5.26l3.509 5.717M.989 5.26L6.123.798M.99 5.26c16.65 2.164 34.038.884 40.65-.026" fill="none" stroke="#E5B713")
+        svg.main__content-icon.for-mobile(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 24")
+            path(d="M5.886.778L.583 4.887M5.886.777l4.992 4.618M5.886.778C5.886 18.5 18 23.5 30 23.5" fill="none" stroke="#E5B713")
+
+        .main__content-text
+            != content[locale].menuLinkDesc

@@ -1,0 +1,23 @@
+<svg width="53" height="85" viewBox="0 0 53 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.6" d="M0 0H53L0 85V0Z" fill="url(#paint0_linear)"/>
+<defs>
+<linearGradient id="paint0_linear" x1="26.5" y1="0" x2="26.5" y2="85" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FB4E5D"/>
+<stop offset="0.0666667" stop-color="#FB4E5D" stop-opacity="0.991353"/>
+<stop offset="0.133333" stop-color="#FB4E5D" stop-opacity="0.96449"/>
+<stop offset="0.2" stop-color="#FB4E5D" stop-opacity="0.91834"/>
+<stop offset="0.266667" stop-color="#FB4E5D" stop-opacity="0.852589"/>
+<stop offset="0.333333" stop-color="#FB4E5D" stop-opacity="0.768225"/>
+<stop offset="0.4" stop-color="#FB4E5D" stop-opacity="0.668116"/>
+<stop offset="0.466667" stop-color="#FB4E5D" stop-opacity="0.557309"/>
+<stop offset="0.533333" stop-color="#FB4E5D" stop-opacity="0.442691"/>
+<stop offset="0.6" stop-color="#FB4E5D" stop-opacity="0.331884"/>
+<stop offset="0.666667" stop-color="#FB4E5D" stop-opacity="0.231775"/>
+<stop offset="0.733333" stop-color="#FB4E5D" stop-opacity="0.147411"/>
+<stop offset="0.8" stop-color="#FB4E5D" stop-opacity="0.0816599"/>
+<stop offset="0.866667" stop-color="#FB4E5D" stop-opacity="0.03551"/>
+<stop offset="0.933333" stop-color="#FB4E5D" stop-opacity="0.01"/>
+<stop offset="1" stop-color="#FB4E5D" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

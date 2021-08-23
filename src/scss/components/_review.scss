@@ -1,0 +1,177 @@
+.review {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 vmin(16);
+	font-family: "Helvetica Neue", "arial", sans-serif;
+
+	&__stars {
+		display: flex;
+		flex: 0 0 auto;
+		align-items: center;
+		justify-content: center;
+		margin: vmin(10) auto vmin(12);
+
+		@include laptop {
+			margin: px(10) auto px(12);
+		}
+	}
+
+	&__star {
+		width: vmin(27);
+		height: vmin(28);
+		color: $color-white;
+
+		&:not(:last-child) {
+			margin-right: vmin(2);
+
+			@include laptop {
+				margin-right: px(2);
+			}
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: vmin(2);
+
+				@include laptop {
+					margin-left: px(2);
+				}
+			}
+		}
+
+		@include active {
+			color: $color-ocean-green;
+		}
+
+		@include laptop {
+			width: px(27);
+			height: px(28);
+		}
+	}
+
+	&__score {
+		margin: 0 0 vmin(11);
+		font-family: "Helvetica Neue", "arial", sans-serif;
+		font-size: vmin(15);
+		line-height: vmin(17);
+		letter-spacing: -0.02em;
+		text-align: center;
+
+		b {
+			font-weight: 700;
+		}
+
+		a {
+			font-weight: 700;
+			text-decoration: underline;
+			transition: $duration-normal $easing-in;
+
+			@include hover {
+				color: $color-yellow2;
+			}
+		}
+
+		@include laptop {
+			margin: 0 0 px(11);
+			font-size: px(15);
+			line-height: px(17);
+		}
+	}
+
+	&__content {
+		flex: 1;
+		border-top: 1px solid rgba($color-waterloo, 0.2);
+		padding: vmin(16) 0 0;
+		width: 100%;
+
+		@include laptop {
+			padding: px(16) 0 0;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: vmin(18);
+		line-height: vmin(21);
+		letter-spacing: -0.02em;
+
+		@include laptop {
+			font-size: px(18);
+			line-height: px(21);
+		}
+	}
+
+	&__text {
+		margin-top: vmin(4);
+		font-size: vmin(15);
+		line-height: vmin(17);
+		letter-spacing: -0.02em;
+
+		@include laptop {
+			margin-top: px(4);
+			font-size: px(15);
+			line-height: px(17);
+		}
+	}
+
+	&__description {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: vmin(16) 0 0;
+
+		@include laptop {
+			margin: px(16) 0 0;
+		}
+	}
+
+	&__rated {
+		font-weight: 700;
+		font-size: vmin(14);
+		line-height: vmin(16);
+		letter-spacing: -0.02em;
+
+		b {
+			color: $color-waterloo;
+		}
+
+		@include laptop {
+			font-size: px(14);
+			line-height: px(16);
+		}
+	}
+
+	&__name {
+		display: flex;
+		align-items: center;
+	}
+
+	&__name-text {
+		margin-right: vmin(10);
+		font-size: vmin(14);
+		line-height: vmin(16);
+		letter-spacing: -0.03em;
+		color: rgba($color-white, 0.8);
+
+		@include laptop {
+			margin-right: px(10);
+			font-size: px(14);
+			line-height: px(16);
+		}
+	}
+
+	&__name-image {
+		border-radius: 50%;
+		width: vmin(32);
+		height: vmin(32);
+
+		@include laptop {
+			width: px(32);
+			height: px(32);
+		}
+	}
+
+	@include laptop {
+		padding: 0 px(32);
+	}
+}

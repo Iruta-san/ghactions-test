@@ -1,0 +1,394 @@
+.delivery {
+	padding-top: vmin(16);
+	min-height: vmin(528);
+
+	.input {
+		&__input {
+			font-size: vmin(36);
+			line-height: vmin(36);
+			letter-spacing: vmin(0.2);
+
+			@include laptop {
+				font-size: px(36);
+				line-height: px(36);
+				letter-spacing: px(0.2);
+			}
+		}
+
+		&__label {
+			&--codes {
+				padding: vmin(10) 0 vmin(15);
+
+				.input__input--masked {
+					padding: 0 vmin(12);
+					height: vmin(36);
+					min-width: unset;
+					font-size: vmin(18);
+					line-height: vmin(18);
+
+					@include laptop {
+						padding: 0 px(12);
+						height: px(36);
+						font-size: px(18);
+						line-height: px(18);
+					}
+				}
+
+				@include laptop {
+					padding: px(10) 0 px(15);
+				}
+			}
+		}
+	}
+
+	&__status {
+		display: flex;
+		justify-content: space-between;
+
+		@include laptop {
+			padding: 0 px(66);
+		}
+	}
+
+	&__status-item {
+		position: relative;
+		pointer-events: none;
+
+		&:not(:first-child) {
+			display: flex;
+			align-items: center;
+			width: 100%;
+
+			&::before {
+				content: "";
+				display: block;
+				flex: 1;
+				width: 100%;
+				height: vmin(1);
+				background-color: rgba($color-white, 0.3);
+
+				@include laptop {
+					height: px(1);
+				}
+			}
+		}
+
+		@include mobile {
+			&:first-child {
+				.delivery__status-item-point span {
+					left: 0;
+					text-align: left;
+					transform: none;
+
+					@include dirRtl {
+						left: auto;
+						right: 0;
+						text-align: right;
+					}
+				}
+			}
+
+			&:last-child {
+				.delivery__status-item-point span {
+					left: auto;
+					right: 0;
+					text-align: right;
+					transform: none;
+
+					@include dirRtl {
+						left: 0;
+						right: auto;
+					}
+				}
+			}
+		}
+
+		@include active {
+			&::before {
+				background-color: rgba($color-gold, 0.3);
+			}
+
+			&:not(.is-disabled) {
+				pointer-events: auto;
+			}
+
+			.delivery__status-item-point {
+				span {
+					color: $color-gold;
+				}
+
+				.point {
+					border-color: $color-white;
+
+					&::before {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	&__status-item-point {
+		position: relative;
+		display: block;
+
+		span {
+			position: absolute;
+			left: 50%;
+			top: calc(100% + 8px);
+			font-family: $font-secondary;
+			font-weight: 600;
+			font-size: vmin(14);
+			line-height: vmin(17);
+			transform: translateX(-50%);
+
+			@include mobile {
+				min-width: vmin(60);
+
+				[data-lang="ru"] &,
+				[data-lang="it"] & {
+					font-size: vmin(11);
+					line-height: vmin(16);
+				}
+
+				[data-lang="de"] &,
+				[data-lang="es"] &,
+				[data-lang="sw"] &,
+				[data-lang="no"] &,
+				[data-lang="pl"] & {
+					font-size: vmin(12);
+					line-height: vmin(16);
+				}
+			}
+
+			@include laptop {
+				font-size: px(14);
+				line-height: px(17);
+				white-space: nowrap;
+			}
+		}
+
+		.point {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+			border: 1px solid rgba($color-white, 0.3);
+			border-radius: 50%;
+			width: vmin(12);
+			height: vmin(12);
+
+			&::before {
+				content: "";
+				display: none;
+				border-radius: 50%;
+				width: vmin(6);
+				height: vmin(6);
+				background: $color-gold;
+			}
+
+			@include laptop {
+				width: px(12);
+				height: px(12);
+
+				&::before {
+					width: px(6);
+					height: px(6);
+				}
+			}
+		}
+	}
+
+	&__tabs {
+		padding-top: vmin(64);
+
+		@include laptop {
+			padding-top: px(74);
+		}
+	}
+
+	&__tabs-header {
+		margin-bottom: vmin(31);
+
+		@include laptop {
+			margin-bottom: px(41);
+
+			&--2 {
+				margin-bottom: px(71);
+			}
+		}
+	}
+
+	&__tabs-name {
+		margin: vmin(11) 0;
+		font-size: vmin(24);
+		line-height: vmin(24);
+
+		@include laptop {
+			margin: px(11) 0;
+			font-size: px(24);
+			line-height: px(24);
+		}
+	}
+
+	&__tabs-text {
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(14);
+		line-height: vmin(17.5);
+		color: $color-white;
+		opacity: 0.8;
+
+		a {
+			text-decoration: underline;
+			color: $color-link;
+		}
+
+		@include laptop {
+			font-size: px(14);
+			line-height: px(17);
+		}
+	}
+
+	&__tabs-nav {
+		display: flex;
+		flex-direction: row-reverse;
+
+		.form__button {
+			margin-top: vmin(24);
+			padding: vmin(14) vmin(10);
+			width: 100%;
+			font-size: vmin(20);
+			line-height: vmin(20);
+
+			@include laptop {
+				margin-top: px(24);
+				padding: px(14) px(10);
+				width: auto;
+				min-width: px(220);
+				font-size: px(20);
+				line-height: px(20);
+			}
+		}
+	}
+
+	&__tabs-processing-title {
+		margin: 0 auto vmin(14);
+		font-size: vmin(24);
+		line-height: vmin(24);
+		text-align: center;
+
+		@include laptop {
+			margin-bottom: px(14);
+			font-size: px(36);
+			line-height: px(36);
+		}
+	}
+
+	&__tabs-processing-spin {
+		margin-bottom: vmin(44);
+		text-align: center;
+
+		img {
+			width: vmin(40);
+			height: vmin(40);
+			// stylelint-disable-next-line
+			animation: spin 1.25s linear infinite;
+
+			@include laptop {
+				width: px(40);
+				height: px(40);
+			}
+		}
+
+		@include laptop {
+			margin-bottom: px(44);
+		}
+	}
+
+	&__tabs-processing-transfer {
+		position: relative;
+		display: flex;
+		align-items: center;
+		margin-bottom: vmin(35);
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(14);
+		line-height: vmin(17);
+
+		img {
+			margin-right: vmin(18);
+			width: vmin(19);
+			height: vmin(18);
+
+			@include laptop {
+				margin-right: px(18);
+				width: px(19);
+				height: px(18);
+			}
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: vmin(18);
+
+				@include laptop {
+					margin-left: px(18);
+				}
+			}
+		}
+
+		@include laptop {
+			margin-bottom: px(35);
+			font-size: px(14);
+			line-height: px(17);
+		}
+	}
+
+	&__tabs-processing-alarm {
+		position: relative;
+		display: flex;
+		align-items: center;
+		margin-bottom: vmin(35);
+		border-radius: 4px;
+		padding: vmin(24) vmin(16);
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(14);
+		line-height: vmin(17);
+		background: $color-purple;
+
+		img {
+			margin-right: vmin(27);
+			width: vmin(29);
+			height: vmin(28);
+
+			@include laptop {
+				margin-right: px(27);
+				width: px(29);
+				height: px(28);
+			}
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: vmin(27);
+
+				@include laptop {
+					margin-left: vmin(27);
+				}
+			}
+		}
+
+		@include laptop {
+			margin-bottom: px(35);
+			padding: px(16);
+			font-size: px(14);
+			line-height: px(17);
+		}
+	}
+
+	@include laptop {
+		padding-top: px(19);
+		min-height: px(528);
+	}
+}

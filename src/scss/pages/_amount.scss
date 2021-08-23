@@ -1,0 +1,51 @@
+.amount {
+	padding-top: vmin(13);
+
+	.input {
+		&__input {
+			font-size: vmin(36);
+			line-height: vmin(36);
+
+			@include laptop {
+				padding: px(21) px(12) px(16);
+				font-size: px(36);
+				line-height: px(36);
+
+				.is-browser-ie & {
+					line-height: px(26);
+				}
+			}
+		}
+
+		&__group {
+			&:last-child {
+				margin-top: vmin(25);
+
+				@include laptop {
+					margin-top: px(25);
+				}
+			}
+		}
+	}
+
+	.form__button {
+		// stylelint-disable-next-line
+		margin-top: 0 !important;
+		margin-left: auto;
+		padding: vmin(15) vmin(78) vmin(14);
+		width: 100%;
+		font-size: vmin(20);
+		line-height: vmin(20);
+
+		@include laptop {
+			padding: px(14) px(78);
+			width: auto;
+			font-size: px(20);
+			line-height: px(20);
+		}
+	}
+
+	@include laptop {
+		padding: px(20) 0 px(3);
+	}
+}

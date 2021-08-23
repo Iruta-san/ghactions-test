@@ -1,0 +1,190 @@
+header.header
+    .header__left
+        a.header__logo(href=url)
+            | ROYALFUT
+            .header__sublogo!= content[locale].sublogo
+
+        .header__language
+            button.btn.header__language-btn(type="button")
+                if localeRU
+                    img(src=`${baseDir}images/flag/RU-lang.svg` alt="flag")
+                    span.ru Русский
+                else if localeDE
+                    img(src=`${baseDir}images/flag/DE-lang.svg` alt="flag")
+                    span Deutsch
+                else if localeFR
+                    img(src=`${baseDir}images/flag/FR-lang.svg` alt="flag")
+                    span Français
+                else if localeIT
+                    img(src=`${baseDir}images/flag/IT-lang.svg` alt="flag")
+                    span Italiano
+                else if localeAR
+                    img(src=`${baseDir}images/flag/AR-lang.svg` alt="flag")
+                    span العربية
+                else if localeNL
+                    img(src=`${baseDir}images/flag/NL-lang.svg` alt="flag")
+                    span Nederlands
+                else if localeES
+                    img(src=`${baseDir}images/flag/ES-lang.svg` alt="flag")
+                    span Español
+                else if localePT
+                    img(src=`${baseDir}images/flag/PT-lang.svg` alt="flag")
+                    span Português
+                else if localeCH
+                    img(src=`${baseDir}images/flag/CH-lang.svg` alt="flag")
+                    span 简体中文
+                else if localeTR
+                    img(src=`${baseDir}images/flag/TR-lang.svg` alt="flag")
+                    span Türkçe
+                else if localePL
+                    img(src=`${baseDir}images/flag/Poland-lang.svg` alt="flag")
+                    span Polski
+                else if localeSW
+                    img(src=`${baseDir}images/flag/SW-lang.svg` alt="flag")
+                    span Svenska
+                else if localeNO
+                    img(src=`${baseDir}images/flag/NO-lang.svg` alt="flag")
+                    span Norsk
+                else
+                    img(src=`${baseDir}images/flag/UK-lang.svg` alt="flag")
+                    span English
+
+                +svg('arrow-down')
+
+            .header__dropdown
+                ul.header__dropdown-nav
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeEN ? 'is-active' : ''}` href="/" data-locale="en")
+                            img(src=`${baseDir}images/flag/UK-lang.svg` alt="flag USA")
+                            span English
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeAR ? 'is-active' : ''}` href="/ar/" data-locale="ar")
+                            img(src=`${baseDir}images/flag/AR-lang.svg` alt="flag AR")
+                            span العربية
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeDE ? 'is-active' : ''}` href="/de/" data-locale="de")
+                            img(src=`${baseDir}images/flag/DE-lang.svg` alt="flag DE")
+                            span Deutsch
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeNL ? 'is-active' : ''}` href="/nl/" data-locale="nl")
+                            img(src=`${baseDir}images/flag/NL-lang.svg` alt="flag NL")
+                            span Nederlands
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeES ? 'is-active' : ''}` href="/es/" data-locale="es")
+                            img(src=`${baseDir}images/flag/ES-lang.svg` alt="flag ES")
+                            span Español
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localePT ? 'is-active' : ''}` href="/pt/" data-locale="pt")
+                            img(src=`${baseDir}images/flag/PT-lang.svg` alt="flag PT")
+                            span Português
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeFR ? 'is-active' : ''}` href="/fr/" data-locale="fr")
+                            img(src=`${baseDir}images/flag/FR-lang.svg` alt="flag FR")
+                            span Français
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeIT ? 'is-active' : ''}` href="/it/" data-locale="it")
+                            img(src=`${baseDir}images/flag/IT-lang.svg` alt="flag IT")
+                            span Italiano
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeSW ? 'is-active' : ''}` href="/sw/" data-locale="sw")
+                            img(src=`${baseDir}images/flag/SW-lang.svg` alt="flag SW")
+                            span Svenska
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeNO ? 'is-active' : ''}` href="/no/" data-locale="no")
+                            img(src=`${baseDir}images/flag/NO-lang.svg` alt="flag NO")
+                            span Norsk
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localePL ? 'is-active' : ''}` href="/pl/" data-locale="pl")
+                            img(src=`${baseDir}images/flag/Poland-lang.svg` alt="flag PL")
+                            span Polski
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeRU ? 'is-active' : ''}` href="/ru/" data-locale="ru")
+                            img(src=`${baseDir}images/flag/RU-lang.svg` alt="flag RU")
+                            span.ru Русский
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeTR ? 'is-active' : ''}` href="/tr/" data-locale="tr")
+                            img(src=`${baseDir}images/flag/TR-lang.svg` alt="flag TR")
+                            span Türkçe
+
+                    li.header__dropdown-item
+                        a.header__dropdown-link(class=`${localeCH ? 'is-active' : ''}` href="/ch/" data-locale="ch")
+                            img(src=`${baseDir}images/flag/CH-lang.svg` alt="flag CH")
+                            span 简体中文
+
+    .header__navigation.js-burger-menu(data-scrollbar-mobile)
+        nav.menu
+            .js-state-header-user.for-mobile.is-hidden
+
+            ul.menu__list
+                li.menu__item.js-state-signin-link.for-mobile.is-hidden
+                    a.menu__link.js-modal-btn.js-signin-btn(role="button" data-id="sign-in")
+                        != content[locale].menuSignIn
+
+                li.menu__item.js-buy-header-hover
+                    button.btn.menu__buy-btn(type="button")
+                        a.menu__link.js-buy(href=`${url}order/`)
+                            != content[locale].menuLinkOrder
+                            +svg('arrow-down')
+                    ul.menu__console.js-buy-console-hover.hide
+                            li
+                                a.menu__link(href=`${url}order/ps4/`) PS4
+                            li
+                                a.menu__link(href=`${url}order/ps5/`) PS5
+                            li
+                                a.menu__link(href=`${url}order/xbox_one/`) XBOX ONE
+                            li
+                                a.menu__link(href=`${url}order/xbox_series_x/`) XBOX S/X
+
+                li.menu__item
+                    a.menu__link(href=`${url}delivery/`)
+                        != content[locale].menuLinkDelivery
+
+                li.menu__item
+                    a.menu__link(href=`${url}#faq`)
+                        != content[locale].menuLinkFaq
+
+        .header__social
+            a.header__social-btn.header__social-btn--insta(href="https://api.whatsapp.com/send?phone=74952604325" rel="nofollow" target="_blank")
+                +svg('whatsapp')
+            a.header__social-btn.header__social-btn--insta(href="https://www.instagram.com/royalfutcoins/" rel="nofollow" target="_blank")
+                +svg('instagram')
+            a.header__social-btn.header__social-btn--tw(href="https://twitter.com/royalfutcoins" rel="nofollow" target="_blank")
+                +svg('twitter')
+            a.header__social-btn.header__social-btn--tt(href="https://www.tiktok.com/@royalfutcoins?" rel="nofollow" target="_blank")
+                +svg('tt')
+
+
+
+    .header__right.js-state-header-user.for-laptop.is-hidden
+
+    .header__right.js-state-signin-btn.for-laptop.is-hidden
+        button.btn.header__button.js-modal-btn.js-signin-btn(type="button" data-id="sign-in")
+            span.btn__content
+                != content[locale].menuSignIn
+
+    button.btn.header__burger.for-mobile.js-burger-btn(type="button")
+        span.header__burger-line
+        span.header__burger-line
+        span.header__burger-line
+
+    .header-order__notify
+
+    .header__notify.is-hidden
+        span.header__notify-text
+        button.btn.header__notify-btn.js-notify-btn(type="button")
+            span.btn__content
+                +svg('close-alt')
+                svg.circle(viewbox="25 25 50 50")
+                    circle(cx="50" cy="50" r="24")

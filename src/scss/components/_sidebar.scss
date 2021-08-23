@@ -1,0 +1,263 @@
+.sidebar {
+	$p: &;
+
+	display: none;
+	margin-top: vmin(56);
+	padding-bottom: vmin(45);
+	width: vmin(327);
+
+	&__content {
+		border-radius: vmin(3);
+		padding: vmin(29) 0 vmin(22);
+		background-color: rgba($color-white, 0.2);
+
+		.is-fade {
+			overflow: hidden;
+			height: px(302);
+		}
+
+		@include laptop {
+			border-radius: px(3);
+			padding: px(29) 0 px(16);
+		}
+	}
+
+	&__trustpilot {
+		margin: 0 auto;
+		width: vmin(102);
+		height: vmin(25);
+
+		@include laptop {
+			width: px(102);
+			height: px(25);
+		}
+	}
+
+	&__slider {
+		.slick-track {
+			will-change: transform;
+		}
+
+		.slick-slide {
+			outline: none;
+			border: none;
+
+			&:focus,
+			&:hover {
+				outline: none;
+				border: none;
+			}
+		}
+	}
+
+	&__dots {
+		overflow: hidden;
+		margin: 0 auto;
+		width: vmin(96);
+
+		#{$p}__dot {
+			margin: 0 vmin(7);
+			border: none;
+			border-radius: 50%;
+			padding: 0;
+			width: vmin(6) !important;
+			height: vmin(6);
+			background: rgba($color-white, 0.2);
+			transition: $duration-normal $easing-in;
+			cursor: pointer;
+
+			@include laptop {
+				margin: 0 px(7);
+				width: px(6) !important;
+				height: px(6);
+			}
+		}
+
+		.slick-current #{$p}__dot {
+			background: $color-ocean-green;
+		}
+
+		.slick-slide {
+			outline: none;
+			border: none;
+
+			&:focus,
+			&:hover {
+				outline: none;
+				border: none;
+			}
+		}
+
+		@include laptop {
+			width: px(96);
+		}
+	}
+
+	&__title {
+		margin: 0;
+		font-size: vmin(24);
+		line-height: vmin(24);
+		color: rgba($color-white, 0.8);
+
+		@include laptop {
+			font-size: px(24);
+			line-height: px(24);
+		}
+	}
+
+	&__link {
+		margin-left: auto;
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(12);
+		line-height: vmin(29);
+		letter-spacing: -0.01em;
+
+		svg {
+			margin-left: vmin(9);
+			width: vmin(9);
+			height: vmin(18);
+			transition: $duration-normal;
+
+			@include laptop {
+				margin-left: px(14);
+				width: px(8);
+				height: px(15);
+			}
+
+			@include dirRtl {
+				margin-right: vmin(9);
+				margin-left: 0;
+				transform: scale(-1, 1);
+
+				@include laptop {
+					margin-right: px(14);
+				}
+			}
+		}
+
+		@include laptop {
+			margin-right: px(4);
+			font-size: px(12);
+			line-height: px(15);
+		}
+
+		@include dirRtl {
+			margin-right: auto;
+			margin-left: 0;
+
+			@include laptop {
+				margin-left: px(4);
+			}
+		}
+
+		@include mobile {
+			[data-lang="fr"] & {
+				font-size: vmin(10);
+			}
+		}
+
+		@include hover {
+			svg {
+				transform: translateX(5px);
+			}
+		}
+	}
+
+	&__item {
+		padding-bottom: vmin(18);
+
+		// &:not(:first-child) {
+		// 	display: none;
+		// }
+
+		@include mobile {
+			&:first-of-type {
+				.sidebar & {
+					margin-bottom: 0;
+				}
+			}
+
+			&:not(:first-of-type) {
+				display: none;
+			}
+		}
+
+		@include laptop {
+			padding-bottom: px(12);
+
+			&:not(:last-child) {
+				margin-bottom: px(20);
+			}
+		}
+	}
+
+	&__logos {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: vmin(47) 0 0;
+
+		@include laptop {
+			margin: px(47) 0 0;
+			padding: 0 px(15);
+		}
+	}
+
+	&__visa {
+		width: vmin(82);
+
+		@include laptop {
+			width: px(82);
+		}
+	}
+
+	&__mastercard {
+		width: vmin(91);
+
+		@include laptop {
+			width: px(91);
+		}
+	}
+
+	&__sslsecured {
+		width: vmin(112);
+
+		@include laptop {
+			width: px(112);
+		}
+	}
+
+	&.is-fade {
+		opacity: 0;
+	}
+
+	@include mobile {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: vmin(-24);
+			right: vmin(-28);
+			bottom: 0;
+			height: 1px;
+			background-color: rgba($color-gray, 0.2);
+		}
+	}
+
+	@include laptop {
+		position: fixed;
+		right: px(48);
+		top: px(130);
+		margin: 0 auto;
+		padding-bottom: 0;
+		width: px(428);
+
+		[data-lang="ar"] & {
+			left: px(48);
+			right: auto;
+			direction: ltr;
+		}
+	}
+}

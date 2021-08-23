@@ -1,0 +1,100 @@
+.platform {
+	display: flex;
+	flex-wrap: wrap;
+	margin: vmin(-4);
+	padding-top: vmin(17);
+
+	&__card {
+		position: relative;
+		flex-direction: column;
+		margin: vmin(4);
+		width: calc(50% - #{vmin(8)});
+		height: vmin(150);
+		text-align: center;
+		color: $color-white;
+
+		&--blue {
+			background: #003087;
+		}
+
+		&--green {
+			background: #52b043;
+		}
+
+		&--orange {
+			background: linear-gradient(180deg, #f90 0%, #f05a22 100%);
+		}
+
+		@include laptop {
+			margin: px(4);
+			width: px(150);
+			height: px(150);
+		}
+
+		@include hover {
+			opacity: 0.8;
+		}
+	}
+
+	&__card-mark {
+		// stylelint-disable-next-line
+		position: absolute !important;
+		// stylelint-disable-next-line
+		left: auto !important;
+		// stylelint-disable-next-line
+		right: vmin(4) !important;
+		// stylelint-disable-next-line
+		top: vmin(4) !important;
+		border-radius: 2px;
+		padding: vmin(4);
+		font-weight: 400;
+		font-size: vmin(18);
+		line-height: vmin(18);
+		background: rgba(255, 255, 255, 0.3);
+
+		@include laptop {
+			right: px(4);
+			top: px(4);
+			padding: px(4);
+			font-size: px(18);
+			line-height: px(18);
+		}
+	}
+
+	&__card-icon {
+		display: flex;
+		justify-content: center;
+		padding: vmin(13) 0 vmin(19) vmin(2);
+
+		svg {
+			display: block;
+			width: vmin(45);
+			height: vmin(45);
+
+			@include laptop {
+				width: px(66);
+				height: px(66);
+			}
+		}
+
+		@include laptop {
+			padding: px(12) 0 px(24) px(2);
+		}
+	}
+
+	&__card-name {
+		font-size: vmin(18);
+		line-height: vmin(18);
+
+		@include laptop {
+			font-size: px(18);
+			line-height: px(18);
+		}
+	}
+
+	@include laptop {
+		flex-wrap: nowrap;
+		margin: px(-4);
+		padding: px(24) 0;
+	}
+}

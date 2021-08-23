@@ -1,0 +1,615 @@
+.payment-method {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 vmin(-4);
+	padding: vmin(11) 0 0;
+
+	&__secure {
+		position: relative;
+		top: vmin(-5);
+		display: inline-flex;
+		align-items: center;
+		margin-left: vmin(12);
+		border: vmin(1) solid rgba($color-white, 0.1);
+		border-radius: vmin(2);
+		padding: vmin(4) vmin(8) vmin(4) vmin(12);
+		font-size: vmin(18);
+		line-height: vmin(19);
+		color: $color-green;
+		opacity: 0;
+
+		svg {
+			display: inline-block;
+			margin-right: vmin(6);
+			width: vmin(12);
+			height: vmin(16);
+			fill: $color-green;
+
+			@include laptop {
+				margin-right: px(6);
+				width: px(12);
+				height: px(16);
+			}
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: vmin(6);
+
+				@include laptop {
+					margin-left: px(6);
+				}
+			}
+		}
+
+		span {
+			position: relative;
+			top: vmin(3);
+
+			[data-lang="ru"] & {
+				top: vmin(1);
+			}
+
+			@include laptop {
+				top: px(3);
+
+				[data-lang="ru"] & {
+					top: px(1);
+				}
+			}
+		}
+
+		.is-active & {
+			opacity: 1;
+		}
+
+		@include laptop {
+			top: px(-5);
+			margin-left: px(12);
+			border-width: px(1);
+			border-radius: px(2);
+			padding: px(4) px(8) px(4) px(12);
+			font-size: px(18);
+			line-height: px(19);
+		}
+
+		@include dirRtl {
+			margin-right: vmin(12);
+			margin-left: 0;
+
+			@include laptop {
+				margin-right: px(12);
+			}
+		}
+	}
+
+	&__secure-2 {
+		display: none;
+		float: right;
+
+		img {
+			margin-left: vmin(16);
+			width: auto;
+			height: 100%;
+			max-height: vmin(32);
+
+			@include laptop {
+				margin-left: px(16);
+				max-height: px(32);
+			}
+		}
+
+		.is-active & {
+			@include laptop {
+				display: block;
+			}
+		}
+	}
+
+	&__secure-3 {
+		display: flex;
+		justify-content: center;
+		margin-top: vmin(36);
+		width: 100%;
+
+		img {
+			margin: 0 vmin(12);
+			width: auto;
+			height: 100%;
+			max-height: vmin(32);
+
+			@include laptop {
+				margin: 0 px(16);
+				max-height: px(32);
+			}
+		}
+
+		@include laptop {
+			display: none;
+			margin-top: px(36);
+		}
+	}
+
+	&__total {
+		display: flex;
+		flex-basis: 100%;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0 vmin(4);
+		width: 100%;
+
+		@include laptop {
+			display: block;
+			flex: 1 0 px(181);
+			margin: 0 px(8);
+			width: px(181);
+		}
+	}
+
+	&__total-title {
+		margin-bottom: vmin(5);
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(12);
+		line-height: vmin(15);
+		color: $color-white;
+		opacity: 0.6;
+
+		@include laptop {
+			margin-bottom: px(5);
+			font-size: px(12);
+			line-height: px(15);
+		}
+	}
+
+	&__total-value {
+		margin-top: vmin(8);
+		font-size: vmin(36);
+		line-height: vmin(36);
+		color: $color-gold;
+
+		&--old {
+			display: none;
+			margin-top: 0;
+			margin-bottom: vmin(-5);
+			font-family: $font-secondary;
+			font-size: vmin(12);
+			line-height: vmin(15);
+			text-decoration-line: line-through;
+			opacity: 0.6;
+		}
+
+		@include laptop {
+			margin-top: px(16);
+			font-size: px(36);
+			line-height: px(36);
+
+			&--old {
+				margin-top: 0;
+				margin-bottom: px(-12);
+				font-size: px(12);
+				line-height: px(15);
+			}
+		}
+	}
+
+	&__total-coupon {
+		display: flex;
+		align-items: center;
+		margin-top: vmin(23);
+		color: $color-gold;
+
+		.payment-method {
+			&__total-coupon-title {
+				display: inline-block;
+				border-bottom: vmin(1) dashed $color-gold;
+				padding-bottom: vmin(1);
+				font-family: $font-secondary;
+				font-weight: 600;
+				font-size: vmin(11);
+				line-height: vmin(15);
+				text-transform: none;
+				color: $color-gold;
+
+				@include laptop {
+					border-bottom-width: px(1);
+					padding-bottom: px(1);
+					font-weight: 600;
+					font-size: px(11);
+					line-height: px(15);
+				}
+			}
+		}
+
+		@include laptop {
+			margin-top: px(8);
+		}
+	}
+
+	&__total-coupon-addon {
+		position: relative;
+		top: vmin(1);
+		display: inline-flex;
+		align-items: center;
+		margin-left: vmin(8);
+		white-space: nowrap;
+		color: rgba($color-gold, 0.5);
+
+		span {
+			margin-right: vmin(14);
+
+			@include laptop {
+				margin-right: px(14);
+			}
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: vmin(14);
+
+				@include laptop {
+					margin-left: px(14);
+				}
+			}
+		}
+
+		svg {
+			position: relative;
+			top: vmin(-2);
+			width: vmin(24);
+			height: vmin(24);
+			cursor: pointer;
+
+			@include laptop {
+				top: px(-2);
+				width: px(24);
+				height: px(24);
+			}
+
+			@include hover {
+				opacity: 0.8;
+			}
+		}
+
+		@include laptop {
+			top: px(1);
+			margin-left: px(8);
+		}
+
+		@include dirRtl {
+			margin-right: vmin(8);
+			margin-left: 0;
+
+			@include laptop {
+				margin-right: px(8);
+			}
+		}
+	}
+
+	&__coupon-content {
+		padding: vmin(16) vmin(4) vmin(16);
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: vmin(18);
+			top: vmin(-3);
+			display: none;
+			border-radius: vmin(3);
+			width: vmin(20);
+			height: vmin(20);
+			background: $color-white;
+			transform: rotate(45deg);
+
+			@include laptop {
+				left: px(18);
+				top: px(-3);
+				display: block;
+				border-radius: px(3);
+				width: px(20);
+				height: px(20);
+			}
+
+			@include dirRtl {
+				left: auto;
+				right: vmin(18);
+
+				@include laptop {
+					right: px(18);
+				}
+			}
+		}
+
+		.input {
+			&__group:not(:last-of-type) {
+				margin-bottom: 0;
+			}
+
+			&__input {
+				padding: vmin(18) vmin(12) vmin(14);
+				height: vmin(50);
+				font-size: vmin(24);
+				line-height: vmin(24);
+
+				@include laptop {
+					padding: px(21) px(12) px(16);
+					height: px(50);
+					font-size: px(24);
+					line-height: px(24);
+					color: $color-black;
+				}
+			}
+
+			&__label-placeholder {
+				color: $color-gold;
+			}
+
+			&__border {
+				border-color: rgba($color-gold, 0.3);
+
+				@include laptop {
+					border-color: rgba($color-black, 0.3);
+				}
+			}
+
+			&__border-right {
+				border-radius: 0;
+
+				@include laptop {
+					border-radius: 0 px(3) px(3) 0;
+				}
+			}
+		}
+
+		&.hidden {
+			display: none;
+		}
+
+		@include laptop {
+			position: absolute;
+			left: px(4);
+			bottom: px(12);
+			border-radius: px(3);
+			padding: px(16);
+			width: px(328);
+			background: $color-white;
+			transform: translateY(100%);
+
+			@include dirRtl {
+				left: auto;
+				right: px(4);
+			}
+		}
+	}
+
+	&__coupon-content-inner {
+		.js-form-error {
+			margin-bottom: vmin(10);
+			width: 100%;
+			color: $color-dark;
+
+			@include laptop {
+				margin-bottom: px(10);
+			}
+		}
+
+		.js-form-content {
+			display: flex;
+
+			@include laptop {
+				display: block;
+			}
+		}
+	}
+
+	&__coupon-button {
+		flex: 0 0 vmin(172);
+
+		.btn {
+			position: relative;
+			margin-top: 0;
+			border-radius: 0 2px 2px 0;
+			padding: vmin(5) vmin(15) vmin(1) vmin(10);
+			width: 100%;
+			height: 100%;
+			font-size: vmin(24);
+			line-height: vmin(24);
+			letter-spacing: vmin(0.4);
+			text-align: center;
+			color: $color-white;
+			background-color: $color-gold;
+
+			@include mobile {
+				[data-lang="ru"] &,
+				[data-lang="nl"] & {
+					font-size: vmin(22);
+				}
+
+				[data-lang="de"] & {
+					font-size: vmin(18);
+				}
+			}
+
+			@include laptop {
+				margin-top: px(14);
+				padding: px(15) px(10) px(9);
+				font-size: px(24);
+				line-height: px(24);
+			}
+
+			@include dirRtl {
+				padding-right: vmin(10);
+				padding-left: vmin(15);
+
+				@include laptop {
+					padding-right: px(10);
+					padding-left: px(15);
+				}
+			}
+
+			@include hover {
+				background-color: $color-yellow3;
+			}
+		}
+
+		@include laptop {
+			flex: 1 0 px(172);
+		}
+	}
+
+	&__method {
+		margin: 0 vmin(4);
+		width: 100%;
+
+		&#paypal-button {
+			padding-top: vmin(14);
+
+			@include laptop {
+				padding-top: px(20);
+			}
+		}
+
+		@include laptop {
+			margin: 0 px(8);
+		}
+	}
+
+	&__method-wrapper {
+		width: 100%;
+
+		@include laptop {
+			display: flex;
+		}
+
+		&.is-disabled {
+			pointer-events: none;
+		}
+	}
+
+	&__button {
+		position: relative;
+		margin-top: vmin(14);
+		border: px(1) solid $color-gold;
+		border-radius: vmin(2);
+		padding: vmin(16) vmin(2) vmin(14);
+		width: 100%;
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(14);
+		line-height: vmin(17);
+		text-align: center;
+		color: $color-white;
+		background-color: transparent;
+
+		svg {
+			margin-right: vmin(9);
+			margin-bottom: vmin(2);
+			width: vmin(16);
+			height: vmin(13);
+
+			@include laptop {
+				margin-right: px(9);
+				margin-bottom: px(2);
+				width: px(16);
+				height: px(13);
+			}
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: vmin(9);
+
+				@include laptop {
+					margin-left: px(9);
+				}
+			}
+		}
+
+		@include laptop {
+			margin-top: px(20);
+			border-width: px(1);
+			padding: px(16) px(9) px(14);
+			font-size: px(14);
+			line-height: px(17);
+		}
+
+		@include hover {
+			background-color: $color-yellow3;
+		}
+	}
+
+	&__logos {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: vmin(14);
+
+		@include laptop {
+			margin-top: px(14);
+		}
+	}
+
+	&__logo {
+		margin: 0 vmin(8);
+
+		&--visa {
+			margin-bottom: vmin(3);
+			width: vmin(35);
+			height: vmin(13);
+
+			@include laptop {
+				margin-bottom: px(3);
+				width: px(35);
+				height: px(13);
+			}
+		}
+
+		&--master {
+			width: vmin(23);
+			height: vmin(18);
+
+			@include laptop {
+				width: px(23);
+				height: px(18);
+			}
+		}
+
+		&--paypal {
+			width: vmin(18);
+			height: vmin(18);
+
+			@include laptop {
+				width: px(18);
+				height: px(18);
+			}
+		}
+
+		&--alipay {
+			width: vmin(18);
+			height: vmin(18);
+
+			@include laptop {
+				width: px(18);
+				height: px(18);
+			}
+		}
+
+		&--skrill {
+			width: vmin(42);
+			height: vmin(14);
+
+			@include laptop {
+				width: px(42);
+				height: px(14);
+			}
+		}
+
+		@include laptop {
+			margin: 0 px(8);
+		}
+	}
+
+	@include laptop {
+		flex-wrap: nowrap;
+		margin: 0 px(-8);
+		padding: px(18) 0 px(24);
+	}
+}

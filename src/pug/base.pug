@@ -1,0 +1,377 @@
+include mixins
+
+block vars
+	-
+		var baseDir = '/'
+	-
+		var title = typeof title !== 'undefined' ? title : null
+		var description = typeof description !== 'undefined' ? description : null
+		var image = typeof image !== 'undefined' ? image : null
+	-
+		var html = {
+			attrs: {
+				lang: 'en'
+			},
+			classList: []
+		}
+	-
+		var body = {
+			attrs: {},
+			classList: []
+		}
+	-
+		var meta = {
+			lang: null,
+			locale: null,
+			appleMobileWebAppCapable: null,
+			appleMobileWebAppStatusBarStyle: null,
+			appleMobileWebAppTitle: null,
+			appleTouchFullscreen: null,
+			applicationName: null,
+			charset: 'utf-8',
+			description: description,
+			formatDetection: {
+				address: true,
+				date: true,
+				email: true,
+				telephone: true
+			},
+			keywords: [],
+			msapplicationTileColor: null,
+			msapplicationTileImage: null,
+			msapplicationNotification: null,
+			msapplicationSquare70x70logo: null,
+			msapplicationSquare150x150logo: null,
+			msapplicationSquare310x310logo: null,
+			msapplicationWide310x150logo: null,
+			msapplicationConfig: null,
+			ogDescription: description,
+			ogImage: image,
+			ogImageType: null,
+			ogImageWidth: null,
+			ogImageHeight: null,
+			ogImageAlt: null,
+			ogLocale: 'ru_RU',
+			ogTitle: title,
+			ogType: 'website',
+			ogUrl: null,
+			themeColor: null,
+			twitterCard: 'summary_large_image',
+			twitterSite: null,
+			twitterCreator: null,
+			twitterTitle: title,
+			twitterDescription: description,
+			twitterImage: image,
+			viewport: 'width=device-width',
+			XUACompatible: 'IE=edge'
+		}
+	-
+		var link = {
+			appleTouchIcon: null,
+			appleTouchIcon40x40: null,
+			appleTouchIcon57x57: null,
+			appleTouchIcon58x58: null,
+			appleTouchIcon60x60: null,
+			appleTouchIcon72x72: null,
+			appleTouchIcon76x76: null,
+			appleTouchIcon80x80: null,
+			appleTouchIcon87x87: null,
+			appleTouchIcon114x114: null,
+			appleTouchIcon120x120: null,
+			appleTouchIcon144x144: null,
+			appleTouchIcon152x152: null,
+			appleTouchIcon167x167: null,
+			appleTouchIcon180x180: null,
+			appleTouchIcon1024x1024: null,
+			appleTouchIconPrecomposed: null,
+			appleTouchIconPrecomposed40x40: null,
+			appleTouchIconPrecomposed57x57: null,
+			appleTouchIconPrecomposed58x58: null,
+			appleTouchIconPrecomposed60x60: null,
+			appleTouchIconPrecomposed72x72: null,
+			appleTouchIconPrecomposed76x76: null,
+			appleTouchIconPrecomposed80x80: null,
+			appleTouchIconPrecomposed87x87: null,
+			appleTouchIconPrecomposed114x114: null,
+			appleTouchIconPrecomposed120x120: null,
+			appleTouchIconPrecomposed144x144: null,
+			appleTouchIconPrecomposed152x152: null,
+			appleTouchIconPrecomposed167x167: null,
+			appleTouchIconPrecomposed180x180: null,
+			appleTouchIconPrecomposed1024x1024: null,
+			icon: 'null',
+			icon16x16: 'null',
+			icon32x32: 'null',
+			icon96x96: null,
+			icon128x128: null,
+			icon192x192: 'null',
+			icon194x194: null,
+			icon196x196: null,
+			icon384x384: null,
+			imageSrc: image,
+			canonical: null,
+			manifest: null,
+			maskIcon: {
+				href: null,
+				color: null
+			}
+		}
+
+doctype html
+html(class=html.classList)&attributes(html.attrs)
+	head
+		meta(name="Access-Control-Allow-Origin" content="*")
+		block head-start
+		block meta
+			if meta.charset !== null
+				meta(charset!=meta.charset)
+			if meta.XUACompatible !== null
+				meta(http-equiv="X-UA-Compatible" content!=meta.XUACompatible)
+			if meta.viewport !== null
+				meta(name="viewport" content!=meta.viewport)
+			if meta.description !== null
+				meta(name="description" content!=meta.description)
+			if meta.keywords !== null && !(Array.isArray(meta.keywords) && !meta.keywords.length)
+				meta(name="keywords" content!=(Array.isArray(meta.keywords) ? meta.keywords.join(', ') : meta.keywords))
+			if meta.ogType !== null && (meta.ogUrl || meta.ogTitle || meta.ogDescription || meta.ogImage)
+				meta(property="og:type" content!=meta.ogType)
+			if meta.ogUrl !== null
+				meta(property="og:url" content!=meta.ogUrl)
+			if meta.ogLocale !== null && (meta.ogUrl || meta.ogTitle || meta.ogDescription || meta.ogImage)
+				meta(property="og:locale" content!=meta.ogLocale)
+			if meta.ogTitle !== null
+				meta(property="og:title" content!=meta.ogTitle)
+			if meta.ogDescription !== null
+				meta(property="og:description" content!=meta.ogDescription)
+			if meta.ogImage !== null
+				meta(property="og:image" content!=meta.ogImage)
+			if meta.ogImageType !== null
+				meta(property="og:image:type" content!=meta.ogImageType)
+			if meta.ogImageWidth !== null
+				meta(property="og:image:width" content!=meta.ogImageWidth)
+			if meta.ogImageHeight !== null
+				meta(property="og:image:height" content!=meta.ogImageHeight)
+			if meta.ogImageAlt !== null
+				meta(property="og:image:alt" content!=meta.ogImageAlt)
+			if meta.twitterCard !== null && (meta.twitterSite || meta.twitterCreator || meta.twitterTitle || meta.twitterDescription || meta.twitterImage)
+				meta(name="twitter:card" content!=meta.twitterCard)
+			if meta.twitterSite !== null
+				meta(name="twitter:site" content!=meta.twitterSite)
+			if meta.twitterCreator !== null
+				meta(name="twitter:creator" content!=meta.twitterCreator)
+			if meta.twitterTitle !== null
+				meta(name="twitter:title" content!=meta.twitterTitle)
+			if meta.twitterDescription !== null
+				meta(name="twitter:description" content!=meta.twitterDescription)
+			if meta.twitterImage !== null
+				meta(name="twitter:image" content!=meta.twitterImage)
+			if meta.appleMobileWebAppCapable !== null
+				meta(name="apple-mobile-web-app-capable" content!=meta.appleMobileWebAppCapable)
+			if meta.appleMobileWebAppStatusBarStyle !== null
+				meta(name="apple-mobile-web-app-status-bar-style" content!=meta.appleMobileWebAppStatusBarStyle)
+			if meta.appleMobileWebAppTitle !== null
+				meta(name="apple-mobile-web-app-title" content!=meta.appleMobileWebAppTitle)
+			if meta.applicationName !== null
+				meta(name="application-name" content!=meta.applicationName)
+			if meta.msapplicationTileColor !== null
+				meta(name="msapplication-TileColor" content!=meta.msapplicationTileColor)
+			if meta.msapplicationTileImage !== null
+				meta(name="msapplication-TileImage" content!=meta.msapplicationTileImage)
+			if meta.msapplicationSquare70x70logo !== null
+				meta(name="msapplication-square70x70logo" content!=meta.msapplicationSquare70x70logo)
+			if meta.msapplicationSquare150x150logo !== null
+				meta(name="msapplication-square150x150logo" content!=meta.msapplicationSquare150x150logo)
+			if meta.msapplicationWide310x150logo !== null
+				meta(name="msapplication-wide310x150logo" content!=meta.msapplicationWide310x150logo)
+			if meta.msapplicationSquare310x310logo !== null
+				meta(name="msapplication-square310x310logo" content!=meta.msapplicationSquare310x310logo)
+			if meta.msapplicationNotification !== null
+				meta(name="msapplication-notification" content!=meta.msapplicationNotification)
+			if meta.msapplicationConfig !== null
+				meta(name="msapplication-config" content!=meta.msapplicationConfig)
+			if meta.themeColor !== null
+				meta(name="theme-color" content!=meta.themeColor)
+			if meta.formatDetection !== null && (typeof meta.formatDetection === 'string' || Object.values(meta.formatDetection).some(function (value) { return !value }))
+				meta(name="format-detection" content!=(typeof meta.formatDetection === 'string' ? meta.formatDetection : Object.entries(meta.formatDetection).filter(function (entry) { return !entry[1] || entry[1] === 'no' }).map(function (entry) { return `${entry[0]}=no` }).join(',')))
+			meta(name="facebook-domain-verification" content="qfv4tah30g1hc53vyel12arbaahicu")
+		if title !== null
+			title!= title
+		block links
+			if link.appleTouchIconPrecomposed !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed)
+			if link.appleTouchIconPrecomposed40x40 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed40x40 sizes="40x40")
+			if link.appleTouchIconPrecomposed57x57 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed57x57 sizes="57x57")
+			if link.appleTouchIconPrecomposed58x58 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed58x58 sizes="58x58")
+			if link.appleTouchIconPrecomposed60x60 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed60x60 sizes="60x60")
+			if link.appleTouchIconPrecomposed72x72 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed72x72 sizes="72x72")
+			if link.appleTouchIconPrecomposed76x76 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed76x76 sizes="76x76")
+			if link.appleTouchIconPrecomposed80x80 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed80x80 sizes="80x80")
+			if link.appleTouchIconPrecomposed87x87 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed87x87 sizes="87x87")
+			if link.appleTouchIconPrecomposed114x114 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed114x114 sizes="114x114")
+			if link.appleTouchIconPrecomposed120x120 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed120x120 sizes="120x120")
+			if link.appleTouchIconPrecomposed144x144 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed144x144 sizes="144x144")
+			if link.appleTouchIconPrecomposed152x152 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed152x152 sizes="152x152")
+			if link.appleTouchIconPrecomposed167x167 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed167x167 sizes="167x167")
+			if link.appleTouchIconPrecomposed180x180 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed180x180 sizes="180x180")
+			if link.appleTouchIconPrecomposed1024x1024 !== null
+				link(rel="apple-touch-icon-precomposed" href!=link.appleTouchIconPrecomposed1024x1024 sizes="1024x1024")
+			if link.appleTouchIcon !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon)
+			if link.appleTouchIcon40x40 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon40x40 sizes="40x40")
+			if link.appleTouchIcon57x57 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon57x57 sizes="57x57")
+			if link.appleTouchIcon58x58 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon58x58 sizes="58x58")
+			if link.appleTouchIcon60x60 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon60x60 sizes="60x60")
+			if link.appleTouchIcon72x72 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon72x72 sizes="72x72")
+			if link.appleTouchIcon76x76 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon76x76 sizes="76x76")
+			if link.appleTouchIcon80x80 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon80x80 sizes="80x80")
+			if link.appleTouchIcon87x87 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon87x87 sizes="87x87")
+			if link.appleTouchIcon114x114 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon114x114 sizes="114x114")
+			if link.appleTouchIcon120x120 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon120x120 sizes="120x120")
+			if link.appleTouchIcon144x144 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon144x144 sizes="144x144")
+			if link.appleTouchIcon152x152 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon152x152 sizes="152x152")
+			if link.appleTouchIcon167x167 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon167x167 sizes="167x167")
+			if link.appleTouchIcon180x180 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon180x180 sizes="180x180")
+			if link.appleTouchIcon1024x1024 !== null
+				link(rel="apple-touch-icon" href!=link.appleTouchIcon1024x1024 sizes="1024x1024")
+			if link.icon !== null
+				link(rel="favicon" href!=link.icon)
+			if link.icon16x16 !== null
+				link(rel="icon" href!=link.icon16x16 sizes="16x16")
+			if link.icon32x32 !== null
+				link(rel="icon" href!=link.icon32x32 sizes="32x32")
+			if link.icon96x96 !== null
+				link(rel="icon" href!=link.icon96x96 sizes="96x96")
+			if link.icon128x128 !== null
+				link(rel="icon" href!=link.icon128x128 sizes="128x128")
+			if link.icon192x192 !== null
+				link(rel="icon" href!=link.icon192x192 sizes="192x192")
+			if link.icon194x194 !== null
+				link(rel="icon" href!=link.icon194x194 sizes="194x194")
+			if link.icon196x196 !== null
+				link(rel="icon" href!=link.icon196x196 sizes="196x196")
+			if link.icon384x384 !== null
+				link(rel="icon" href!=link.icon384x384 sizes="384x384")
+			if link.manifest !== null
+				link(rel="manifest" href!=link.manifest)
+			if link.maskIcon.href !== null
+				link(rel="mask-icon" href!=link.maskIcon.href color=link.maskIcon.color)
+			if link.canonical !== null
+				link(rel="canonical" href!=link.canonical)
+		block styles
+			link(rel="stylesheet" href!=`${baseDir}css/main.css?v=${Date.now()}`)
+		block analytics
+			script.
+				window.analyticsLocal = !!(window.location.origin.indexOf('localhost') >= 0 || window.location.origin.indexOf('192.168') >= 0 || window.location.origin.indexOf('ec2-3-139-119-35.us-east-2') >= 0 || window.location.origin.indexOf('royalfut.na4u.ru') >= 0 || window.location.origin.indexOf('test-royalfut.com') >= 0);
+			// Google Tag Manager
+			script.
+				if (!window.analyticsLocal) {
+					console.log('GA');
+					(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+					new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+					j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+					'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+					})(window,document,'script','dataLayer','GTM-T5XMW5F');
+				}
+			// End Google Tag Manager
+			// Start Froged
+			script.
+				window.frogedSettings = {appId: "3hyxf6"}
+			script.
+				(function(){var a=document,b=window;if("function"!=typeof Froged){Froged=function(a,b,c){Froged.c(a,b,c)},Froged.q=[],Froged.c=function(a,b,c){Froged.q.push([a,b,c])},fg_data={hooks:{}};var c=function(){var b=a.createElement("script");b.type="text/javascript",b.async=!0,b.src="https://sdk.froged.com";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)};"complete"===a.readyState?c():window.attachEvent?b.attachEvent("onload",c):b.addEventListener("load",c,!1)}})()
+			// End Froged
+			// TrustBox script
+			script(type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js")
+			// End TrustBox script
+			meta(name="google-site-verification" content="74-Fji6t-TWLaHl619AtGuWyoFeHxkNHSTyBEWDci6c")
+			meta(name="yandex-verification" content="3c8a17e94e9486c8")
+
+		block hrefLang
+
+		block head-end
+	body(class=body.classList)&attributes(body.attrs)
+		noscript
+			link(rel="stylesheet" href!=`${baseDir}css/noscript.css?v=${Date.now()}`)
+		.loader
+			.loader__text
+				svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 106 27")
+					path(d="M8.72 26a11.31 11.31 0 00-.144-.468 5.567 5.567 0 01-.144-.54 21.894 21.894 0 01-.072-.828v-5.22c0-1.176-.204-2.004-.612-2.484-.408-.48-1.068-.72-1.98-.72H4.4V26H.44V.8h5.976c2.064 0 3.552.48 4.464 1.44.936.96 1.404 2.412 1.404 4.356v1.98c0 2.592-.864 4.296-2.592 5.112 1.008.408 1.692 1.08 2.052 2.016.384.912.576 2.028.576 3.348v3.888c0 .624.024 1.176.072 1.656.048.456.168.924.36 1.404H8.72zM4.4 4.4v7.74h1.548c.744 0 1.32-.192 1.728-.576.432-.384.648-1.08.648-2.088V6.992c0-.912-.168-1.572-.504-1.98-.312-.408-.816-.612-1.512-.612H4.4zm14.16 15.804c0 .912.18 1.56.54 1.944.384.36.888.54 1.512.54s1.116-.18 1.476-.54c.384-.384.576-1.032.576-1.944V6.596c0-.912-.192-1.548-.576-1.908-.36-.384-.852-.576-1.476-.576s-1.128.192-1.512.576c-.36.36-.54.996-.54 1.908v13.608zM14.6 6.848c0-2.04.516-3.6 1.548-4.68C17.18 1.064 18.668.512 20.612.512c1.944 0 3.432.552 4.464 1.656 1.032 1.08 1.548 2.64 1.548 4.68v13.104c0 2.04-.516 3.612-1.548 4.716-1.032 1.08-2.52 1.62-4.464 1.62-1.944 0-3.432-.54-4.464-1.62-1.032-1.104-1.548-2.676-1.548-4.716V6.848zm17.779 10.8L27.375.8h4.14l3.023 11.484L37.563.8h3.78l-5.005 16.848V26h-3.96v-8.352zM54.002 26h-3.996l-.684-4.572h-4.86L43.778 26h-3.636L44.174.8h5.796L54.002 26zm-9.036-7.992h3.816L46.874 5.264l-1.908 12.744zM55.846.8h3.96v21.6h6.516V26H55.846V.8zm16.16 11.196h5.112v3.6h-5.112V26h-3.96V.8H78.52v3.6h-6.516v7.596zM84.2.8v19.44c0 .912.18 1.548.54 1.908.383.36.888.54 1.511.54.624 0 1.117-.18 1.477-.54.383-.36.576-.996.576-1.908V.8h3.743v19.188c0 2.04-.504 3.612-1.511 4.716-.985 1.08-2.449 1.62-4.393 1.62s-3.42-.54-4.428-1.62c-.983-1.104-1.475-2.676-1.475-4.716V.8h3.96zm9.411 0h12.24v3.6h-4.14V26h-3.96V4.4h-4.14V.8z" fill="#9049F4")
+
+			svg(viewbox="0 0 866 866" xmlns="http://www.w3.org/2000/svg")
+				svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 164.83 151.5")
+					path.path-0(d="M117.24 69.24a8 8 0 00-1.57-2.24c-4.88-4-9.8-7.89-14.86-11.62a4.93 4.93 0 00-3.88-.38c-5.76 1.89-11.4 4.17-17.18 6a4.36 4.36 0 00-3.42 4.12c-1 6.89-2.1 13.76-3 20.66a4 4 0 001 3.07c5.12 4.36 10.39 8.61 15.68 12.76a3.62 3.62 0 002.92.75c6.29-2.66 12.52-5.47 18.71-8.36a3.49 3.49 0 001.68-2.19c1.34-7.25 2.54-14.55 3.9-22.58z")
+					path.path-1(d="M97.55 38.68a43.76 43.76 0 01.45-5.24c.41-2.36-.5-3.57-2.57-4.64C91.1 26.59 87 24 82.66 21.82a6.18 6.18 0 00-4-.71c-5.21 1.44-10.34 3.14-15.44 4.89-3.63 1.21-6.08 3.35-5.76 7.69a26.67 26.67 0 01-.6 4.92c-1.08 8.06-1.08 8.08 5.86 11.92 3.95 2.19 7.82 5.75 11.94 6.08s8.76-2.41 13.12-3.93c9.33-3.29 9.33-3.3 9.78-14z")
+					path.path-2(d="M66.11 126.56c5.91-.91 11.37-1.7 16.81-2.71a3.3 3.3 0 001.87-2.17c1-4.06 1.73-8.19 2.84-12.24.54-2-.11-3-1.55-4.15-5-4-9.9-8.12-15-12a6.19 6.19 0 00-4.15-1.1c-5.35.66-10.7 1.54-16 2.54A4 4 0 0048.34 97a109.13 109.13 0 00-3 12.19 4.47 4.47 0 001.34 3.6c5.54 4.36 11.23 8.53 16.91 12.69a10.84 10.84 0 002.57 1.11z")
+					path.path-3(d="M127.42 104.12c4.1-2.1 8-3.93 11.72-6a6 6 0 002.27-3 58.22 58.22 0 003.18-29.92c-.26-1.7-8-7.28-9.71-6.85a5 5 0 00-1.88 1.3c-2.81 2.49-5.71 4.88-8.33 7.56a9.46 9.46 0 00-2.47 4.4c-1.29 6.49-2.38 13-3.35 19.55a5.73 5.73 0 00.83 3.91c2.31 3.08 5 5.88 7.7 9z")
+					path.path-4(d="M52.58 29.89c-2.15-.36-3.78-.54-5.39-.9-2.83-.64-4.92.1-7 2.32a64.1 64.1 0 00-14.1 23.33c-2.64 7.92-2.62 7.84 5.15 10.87 1.76.69 2.73.45 3.93-1C39.79 59 44.54 53.65 49.22 48.2a4.2 4.2 0 001.13-2c.8-5.32 1.49-10.68 2.24-16.34z")
+					path.path-5(d="M23 68.13V75a60.49 60.49 0 009.75 32.15c1.37 2.13 6.4 3 7 1.2 1.55-5 2.68-10.2 3.82-15.34.13-.58-.58-1.38-.94-2.06-2.51-4.77-5.47-9.38-7.45-14.37C32.94 71 28.22 69.84 23 68.13z")
+					path.path-6(d="M83.91 12.86c-.32.36-.66.71-1 1.07.9 1.13 1.57 2.62 2.73 3.33 4.71 2.84 9.56 5.48 14.39 8.1a9.29 9.29 0 003.13.83c5.45.69 10.89 1.38 16.35 1.94a10.41 10.41 0 003.07-.71c-11.48-9.9-24.26-14.61-38.71-14.56z")
+					path.path-7(d="M66.28 132.51c13.36 3.78 25.62 3.5 38-.9-12.6-2.02-24.92-3.61-38 .9z")
+					path.path-8(d="M127.2 30.66l-1.27.37a18.58 18.58 0 001 3.08c3 5.52 6.21 10.89 8.89 16.54 1.34 2.83 3.41 3.82 6.49 4.9a60.38 60.38 0 00-15.12-24.9z")
+					path.bb-9(d="M117.35 125c5.58-2.32 16.9-13.84 18.1-19.2-2.41 1.46-5.18 2.36-6.78 4.23-4.21 5-7.89 10.37-11.32 15z")
+
+		include ./content
+
+		block analytics
+			// Google Tag Manager (noscript)
+			noscript
+				iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-T5XMW5F" height="0" width="0" style="display:none;visibility:hidden")
+			// End Google Tag Manager (noscript)
+		block body-start
+		block content
+
+		block scripts
+			script.
+				var paypalId = 'AXQQqbo9QNq1-jN2CTx4FzbnzKpsrEKOrKGPr0PIVLWtzdZrlZ09AXu3yspozs3KqKB6Z4ARtO33lY9M';
+				var paymentsLanguage = "en-US"; // если на русском, то 'ru-Ru';
+				//- var url = window.location.origin.indexOf('localhost') >= 0 || window.location.origin.indexOf('192.168') >= 0 ? 'https://royalfut.com' : window.location.origin;
+				var url = window.location.origin.indexOf('localhost') >= 0 || window.location.origin.indexOf('192.168') >= 0 || window.location.origin.indexOf('linestest.com') >= 0 || window.location.origin.indexOf('royalfut.na4u.ru') >= 0 ? 'https://test-royalfut.com' : window.location.origin;
+				var urlForUser = "".concat(url, "/api/user");
+				var urlForUserLogin = "".concat(url, "/api/users/login");
+				var urlForOrder = "".concat(url, "/api/order");
+				var urlForStock = "".concat(url, "/api/stock");
+				var urlForFacebook = "".concat(url, "/api/users/login/facebook");
+				var urlForGoogle = "".concat(url, "/api/user/login/code/google");
+			script(src="https://widget.cloudpayments.ru/bundles/cloudpayments")
+			script(crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CIntersectionObserver")
+			script(src!=`${baseDir}js/vendor.js?v=${Date.now()}`)
+			script(src!=`${baseDir}js/main.js?v=${Date.now()}`)
+			script(crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#version=v10.0&appId=128042159225777&xfbml=true&autoLogAppEvents=true")
+			script(src="https://apis.google.com/js/client:platform.js?onload=start" async defer)
+			script.
+				function start() {
+					gapi.load('auth2', function () {
+						auth2 = gapi.auth2.init({
+							client_id: '754137399246-qabm6770ckoo0puec4pibpbsh79pvi44.apps.googleusercontent.com',
+						});
+					});
+				}
+
+		block body-end

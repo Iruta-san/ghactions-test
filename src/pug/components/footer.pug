@@ -1,0 +1,50 @@
+footer.footer
+	ul.footer__list
+		li.footer__item
+			a.footer__link(href=`${url}order/ps4/`) PS4
+
+		li.footer__item
+			a.footer__link(href=`${url}order/ps5/`) PS5
+
+		li.footer__item
+			a.footer__link(href=`${url}order/xbox_one/`) Xbox ONE
+
+		li.footer__item
+			a.footer__link(href=`${url}order/xbox_series_x/`) Xbox S/X
+
+		li.footer__item
+			a.footer__link(href=`${url}contact/`)
+				!= content[locale].footerLinkContact
+
+		li.footer__item
+			a.footer__link(href=`${url}delivery/`)
+				!= content[locale].footerLinkDelivery
+
+		li.footer__item
+			a.footer__link(href=`${url}payment/`)
+				!= content[locale].footerLinkPayment
+
+		//- li.footer__item
+		//- 	a.footer__link(href=`${url}privacy/`)
+		//- 		!= content[locale].footerLinkPrivacy
+
+		li.footer__item
+			a.footer__link(href=`${url}terms/`)
+				!= content[locale].footerLinkTerms
+
+	.footer__payments
+		.footer__payment.footer__payment--master
+			+svg('master')
+
+		.footer__payment.footer__payment--visa
+			+svg('visa')
+
+	.footer__left
+		a.footer__logo(href=url)
+			| Royalfut
+
+		.footer__copy
+			| 2020-2021
+
+	//- a.btn.footer__button(href="https://api.whatsapp.com/send?phone=74952604325" rel="nofollow" target="_blank")
+	//- 	+svg('support')

@@ -1,0 +1,211 @@
+.footer {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: vmin(16) vmin(24) vmin(24);
+	font-family: $font-secondary;
+	font-weight: 600;
+	font-size: vmin(12);
+	line-height: vmin(15);
+	letter-spacing: -0.01em;
+	color: rgba($color-white, 0.6);
+
+	&__left {
+		display: flex;
+		align-items: center;
+		margin-right: px(29);
+
+		@include dirRtl {
+			margin-right: 0;
+			margin-left: px(29);
+		}
+
+		@include laptop {
+			order: 1;
+		}
+
+		@include mobile {
+			margin-top: vmin(20);
+		}
+	}
+
+	&__logo {
+		text-transform: uppercase;
+
+		@include hover {
+			color: $color-white;
+		}
+	}
+
+	&__copy {
+		margin-left: px(16);
+
+		@include dirRtl {
+			margin-right: px(16);
+			margin-left: 0;
+		}
+	}
+
+	&__payments {
+		display: flex;
+		align-items: center;
+
+		@include laptop {
+			order: 2;
+		}
+
+		@include mobile {
+			margin-left: vmin(11);
+
+			@include dirRtl {
+				margin-right: vmin(11);
+				margin-left: 0;
+			}
+		}
+	}
+
+	&__payment {
+		&:not(:last-child) {
+			margin-right: px(32);
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: px(32);
+			}
+		}
+
+		&--master {
+			width: vmin(26);
+			height: vmin(17);
+
+			@include laptop {
+				width: px(26);
+				height: px(17);
+			}
+		}
+
+		&--visa {
+			width: vmin(39);
+			height: vmin(13);
+
+			@include laptop {
+				width: px(39);
+				height: px(13);
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-left: auto;
+		text-align: right;
+
+		@include dirRtl {
+			margin-right: auto;
+			margin-left: 0;
+		}
+
+		@include laptop {
+			order: 3;
+		}
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: px(18);
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: px(18);
+			}
+		}
+	}
+
+	&__link {
+		display: inline-block;
+
+		@include mobile {
+			margin-bottom: vmin(17);
+		}
+
+		@include hover {
+			color: $color-white;
+		}
+
+		@include active {
+			color: $color-white;
+		}
+	}
+
+	&__button {
+		position: fixed;
+		right: vmin(19);
+		bottom: vmin(16);
+		z-index: 9;
+		width: vmin(30);
+		height: vmin(30);
+		color: $color-white;
+
+		&::before {
+			content: "";
+			position: absolute;
+			right: vmin(-19);
+			bottom: vmin(-20);
+			z-index: -1;
+			width: vmin(110);
+			height: vmin(150);
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 130 168'%3E%3Cpath d='M130 207H0L130 0v207z' fill='%2336B33B'/%3E%3C/svg%3E");
+			background-size: cover;
+			background-repeat: no-repeat;
+			pointer-events: none;
+
+			@include dirRtl {
+				transform: scale(-1, 1);
+			}
+
+			@include laptop {
+				right: px(-19);
+				bottom: px(-30);
+				width: px(130);
+				height: px(168);
+			}
+		}
+
+		@include laptop {
+			right: px(19);
+			bottom: px(29);
+			width: px(30);
+			height: px(30);
+		}
+
+		@include dirRtl {
+			left: vmin(19);
+			right: 0;
+
+			@include laptop {
+				left: px(19);
+			}
+		}
+
+		@include hover {
+			color: rgba($color-white, 0.6);
+		}
+	}
+
+	@include laptop {
+		flex-direction: row;
+		align-items: center;
+		margin: px(200) px(48) 0;
+		border-top: 1px solid rgba($color-gray, 0.2);
+		padding: px(16) px(80) px(23) 0;
+		font-size: px(12);
+		line-height: px(15);
+
+		@include dirRtl {
+			padding: px(16) 0 px(23) px(80);
+		}
+	}
+}

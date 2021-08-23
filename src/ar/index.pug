@@ -1,0 +1,61 @@
+extends ../pug/base
+
+prepend vars
+	- title = 'عملات 21 FIFA المعدنية| تتوفر للبيع عملات FUT 21 رخيصة وآمنة | ROYALFUT'
+	- description = 'اشتر عملات FIFA 21 رخيصة لأجهزة PS4 وXBOX ONE وPS5 من متجر ROYALFUT بأقل سعر مع مدفوعات سريعة وآمنة. يضمن متجرنا تسليم عملات FUT 21 بأمان في غضون 15 دقيقة ويوفر دعمًا على الإنترنت على مدار الساعة | احصل على فريقك الفائق الآن!'
+
+append vars
+	- html.attrs.lang = 'ar'
+	- meta.lang = 'ar-AR'
+	- html.attrs.dir = 'rtl'
+	- meta.locale = 'ar'
+	- body.attrs = {"data-barba": "wrapper"}
+	- meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover'
+	- link.icon384x384 = '/android-chrome-384x384.png'
+	- link.icon192x192 = '/android-chrome-192x192.png'
+	- link.appleTouchIcon180x180 = '/apple-touch-icon.png'
+	- link.icon = '/favicon.ico'
+	- link.icon32x32 = '/favicon-32x32.png'
+	- link.icon16x16 = '/favicon-16x16.png'
+	- link.manifest = '/site.webmanifest'
+	- meta.msapplicationTileImage = '/mstile-150x150.png'
+	- link.canonical = '/ar/'
+
+block hrefLang
+	link(rel="alternate" hreflang="ar-SA" href="https://royalfut.com/ar/")
+	link(rel="alternate" hreflang="ch-CH" href="https://royalfut.com/ch/")
+	link(rel="alternate" hreflang="de-DE" href="https://royalfut.com/de/")
+	link(rel="alternate" hreflang="en-US" href="https://royalfut.com/")
+	link(rel="alternate" hreflang="en-GB" href="https://royalfut.com/")
+	link(rel="alternate" hreflang="en-EN" href="https://royalfut.com/")
+	link(rel="alternate" hreflang="es-ES" href="https://royalfut.com/es/")
+	link(rel="alternate" hreflang="fr-FR" href="https://royalfut.com/fr/")
+	link(rel="alternate" hreflang="it-IT" href="https://royalfut.com/it/")
+	link(rel="alternate" hreflang="nl-NL" href="https://royalfut.com/nl/")
+	link(rel="alternate" hreflang="no-NO" href="https://royalfut.com/no/")
+	link(rel="alternate" hreflang="pl-PL" href="https://royalfut.com/pl/")
+	link(rel="alternate" hreflang="pt-PT" href="https://royalfut.com/pt/")
+	link(rel="alternate" hreflang="ru-RU" href="https://royalfut.com/ru/")
+	link(rel="alternate" hreflang="sw-SE" href="https://royalfut.com/sw/")
+	link(rel="alternate" hreflang="tr-TR" href="https://royalfut.com/tr/")
+	link(rel="alternate" hreflang="x-default" href=" https://royalfut.com")
+
+block content
+	include ./base
+
+	picture.site__media.is-hidden
+		img(src=`${baseDir}images/bg-.jpg` alt="bg picture")
+
+	.site.is-hidden(data-barba="container" data-barba-namespace="home")
+		include ../pug/components/header
+
+		main
+			.container
+				.site-grid
+					include ../pug/pages/ar/main
+					include ../pug/components/sidebar
+
+		include ../pug/components/footer
+		include ../pug/components/cookie
+
+		include ../pug/components/signin

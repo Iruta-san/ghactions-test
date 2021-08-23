@@ -1,0 +1,111 @@
+.modal(data-modal="sign-in")
+	.modal__bg.js-modal-close
+	.modal__wrapper
+		button.btn.modal__close.js-modal-close(type="button")
+			+svg('close-alt')
+
+		div(data-scrollbar)
+			.modal__container.js-tabs
+				.modal__tabs
+					button.modal__tab.btn.js-tabs-btn.is-active(type="button" data-id="sign-up")
+						.btn__content
+							!= content[locale].modalTabSignUp
+					button.modal__tab.btn.js-tabs-btn(type="button" data-id="sign-in")
+						.btn__content
+							!= content[locale].modalTabSignIn
+
+				.modal__content.js-tabs-content.is-hidden(data-id="sign-in")
+					form.form.js-form-login(action="/api/users/login" method="POST" data-form="login")
+						.form__message.form__message--error.js-form-error-message.is-hidden
+						.form__message.form__message--success.js-form-success-message.is-hidden
+						.js-form-content
+							fieldset.input__group
+								label.input__label.input__label--email(data-error="Error email" for="sign-in-email")
+									input.input__input.input__input--new.js-inputs#sign-in-email(name="email" type="email" required placeholder=`${content[locale].modalSignEmail}`)
+									span.input__label-placeholder
+										!= content[locale].modalSignEmail
+
+							fieldset.input__group
+								label.input__label.input__label--password(data-error="Error Password" for="sign-in-password")
+									input.input__input.input__input--new.js-inputs#sign-in-password(name="password" type="password" minlength="8" required placeholder=`${content[locale].modalSignPassword}`)
+									span.input__label-placeholder
+										!= content[locale].modalSignPassword
+
+									button.input__view.btn.js-password-view(type="button" title=`${content[locale].modalSignSeePassword}`)
+										.btn__content
+											+svg('eye').eye
+											+svg('eye-close').eye-close
+
+								span.input__least
+									!= content[locale].modalSignSymbols8
+
+							button.btn.form__button.modal__form-button.js-form-submit(type="submit")
+								.btn__content
+									!= content[locale].modalSignBtnIn
+							.social-login
+								.social-login__text
+									!= content[locale].modalSocialLogin
+								.social-login__list
+									.social-login__item
+										a.social-login__link.social-login__link--fb.js-fb-login(href="javascript:void(0);", title=`${content[locale].modalSocialLoginFB}`)
+											+svg('fb-color').fb
+										a.social-login__link.social-login__link.js-google-login(href="javascript:void(0);", title=`${content[locale].modalSocialLoginGoogle}`)
+											+svg('google').google
+				.modal__content.js-tabs-content.is-active(data-id="sign-up")
+					form.form.js-form-login(action="/api/users" method="POST" data-form="signup")
+						.form__message.form__message--error.js-form-error-message.is-hidden
+						.form__message.form__message--success.js-form-success-message.is-hidden
+						.js-form-content
+							.social-login.social-login--signin
+								.social-login__text
+									!= content[locale].modalSocialSigin
+								.social-login__list
+									.social-login__item
+										a.social-login__link.social-login__link--fb.js-fb-login(href="javascript:void(0);", title=`${content[locale].modalSocialSiginFB}`)
+											+svg('fb-color').fb
+										a.social-login__link.social-login__link.js-google-login(href="javascript:void(0);", title=`${content[locale].modalSocialSiginGoogle}`)
+											+svg('google').google
+								.social-login__text.social-login__text--or
+									!= content[locale].modalSocialOr
+							fieldset.input__group
+								label.input__label.input__label--username(data-error="Error Username" for="sign-up-username")
+									input.input__input.input__input--new.js-inputs#sign-up-username(name="username" type="text" minlength="3" placeholder=`${content[locale].modalSignLogin}` required)
+									span.input__label-placeholder
+										!= content[locale].modalSignLogin
+
+								span.input__least
+									!= content[locale].modalSignSymbols3
+
+							fieldset.input__group
+								label.input__label.input__label--email(data-error="Error email" for="sign-up-email")
+									input.input__input.js-inputs.input__input--new#sign-up-email(name="email" type="email" required placeholder=`${content[locale].modalSignEmail}`)
+									span.input__label-placeholder
+										!= content[locale].modalSignEmail
+
+							fieldset.input__group
+								label.input__label.input__label--password(data-error="Error Password" for="sign-up-password")
+									input.input__input.input__input--new.js-inputs#sign-up-password(name="password" type="password" minlength="8" required placeholder=`${content[locale].modalSignPassword}`)
+									span.input__label-placeholder
+										!= content[locale].modalSignPassword
+
+									button.input__view.btn.js-password-view(type="button" title=`${content[locale].modalSignSeePassword}`)
+										.btn__content
+											+svg('eye').eye
+											+svg('eye-close').eye-close
+
+								span.input__least
+									!= content[locale].modalSignSymbols8
+							.social-login__forgot
+								input.social-login__check(type="checkbox" id="check_999" name="check_999" checked)
+								label.social-login__label(for="check_999")
+									+svg('check').check
+									!= content[locale].modalSocialForgot
+								a.social-login__link-check(href="/terms/", title=`${content[locale].modalSocialLoginCheck}`)
+									!= content[locale].modalSocialLoginCheck
+
+							button.btn.form__button.modal__form-button.js-form-submit(type="submit")
+								.btn__content
+									!= content[locale].modalSignBtnUp
+
+							//- .form__terms
+								!= content[locale].modalSignTerms

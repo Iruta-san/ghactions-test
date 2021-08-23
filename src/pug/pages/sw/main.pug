@@ -1,0 +1,63 @@
+section.main.site__col-12.site__col-lg-7.site__col-xl-6.site__col-xxl-5.offset-xl-1.offset-xxl-2
+	h1.site__title.site__title--1
+		| KÖP FUT 21 MYNT
+		br
+		| SNABBT OCH SÄKERT
+	include ../mainCalc
+	//.main__content
+	//	a.btn.main__button.js-buy(href=`${url}order.html`)
+	//		span.btn__content
+	//			| KÖP MYNT
+	//	svg.main__content-icon.for-laptop(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 42 12")
+	//		path(d="M.99 5.26l3.509 5.717M.989 5.26L6.123.798M.99 5.26c16.65 2.164 34.038.884 40.65-.026" fill="none" stroke="#E5B713")
+	//	svg.main__content-icon.for-mobile(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 24")
+	//		path(d="M5.886.778L.583 4.887M5.886.777l4.992 4.618M5.886.778C5.886 18.5 18 23.5 30 23.5" fill="none" stroke="#E5B713")
+	//	.main__content-text
+	//		| Vårt system är helt automatiserat, #[br]så vi kan leverera mynt dygnet runt.
+
+	.main__info
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/purple.svg` alt="Figure")
+			.main__card-title SÄKRASTE ALTERNATIVET
+			.main__card-text Du behöver inte oroa dig för sanktioner från EA. Vi jobbar med en förbättrad algoritm som bygger på att vår leverantör köper ett enda spelarkort när du lägger din beställning.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/blue.svg` alt="Figure")
+			.main__card-title SNABBT OCH ENKELT
+			.main__card-text Vårt system är helt automatiserat, så vi levererar mynt så snabbt det bara går. Det går på några klick – vi sköter resten.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/red.svg` alt="Figure")
+			.main__card-title LÅNG ERFARENHET
+			.main__card-text Vi har sålt mynt sedan FIFA 17, fast på den tiden sålde vi bara i större partier. Med vår samlade erfarenhet kan vi erbjuda den bästa produkten för FUT-spelare.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/yellow.svg` alt="Figure")
+			.main__card-title LÄGSTA PRISERNA
+			.main__card-text Vi står för alla extraavgifter. Våra priser är några av de lägsta på marknaden. Det är 50 % billigare att öppna paket med våra mynt jämfört med FIFA-poäng.
+
+	.main__buy
+		.main__buy-head
+			.main__buy-title HUR FUNGERAR
+				|  #[span  SMIDIG LEVERANS]?
+			//a.main__buy-button See how transfer mode works
+		.main__buy-container
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 1
+				.main__buy-text
+					| Välj plattform och antal mynt.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 2
+				.main__buy-text
+					| Ange e-postadress, lösenord och reservkoder.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 3
+				.main__buy-text
+					| Mynten dyker upp i din FUT-klubb. Ha det så kul!
+
+	include ./faq
+	script(async src="https://f.royalfut.com/2abe5b48d2731f8b7232d53248d2ef44.js")

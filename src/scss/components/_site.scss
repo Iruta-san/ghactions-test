@@ -1,0 +1,714 @@
+.site {
+	position: relative;
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: column;
+	padding: vmin(86) 0 vmin(16);
+	opacity: 0;
+	transition: opacity $duration-normal $duration-normal;
+
+	&::before {
+		content: "";
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		width: vmin(190);
+		height: vmin(276);
+		background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 387'%3E%3Cpath d='M0 0v387L239.831 0H0z' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='132' y1='-2.5' x2='132' y2='387' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23A82DF9'/%3E%3Cstop offset='1' stop-color='%236678E9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+		background-size: contain;
+		background-repeat: no-repeat;
+		pointer-events: none;
+
+		@include laptop {
+			width: px(240);
+			height: px(387);
+		}
+
+		@include desktop {
+			content: none;
+			display: none;
+		}
+	}
+
+	&__media {
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		overflow: hidden;
+		width: vmin(375);
+		height: vmin(737);
+		opacity: 0;
+		mix-blend-mode: lighten;
+		transition: opacity $duration-normal $duration-normal;
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 1;
+			width: px(951);
+			height: px(1533);
+			background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 951 1533'%3E%3Cpath d='M0 1532.5h951L950 0 0 1532.5z' fill='%2312142A'/%3E%3C/svg%3E");
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+
+		img {
+			position: absolute;
+			left: 40%;
+			top: 50%;
+			height: 100%;
+			max-width: none;
+			font-family: "object-fit: cover;";
+			object-fit: cover;
+			transform: translate(-50%, -50%);
+
+			@include mobile {
+				top: 43.5%;
+			}
+		}
+
+		@include laptop {
+			width: px(951);
+			height: 100%;
+
+			@media (max-height: 550px) {
+				height: px(550);
+			}
+
+			@supports (clip-path: polygon(0 0, 100% 0%, 33.5% 100%, 0% 100%)) {
+				clip-path: polygon(0 0, 100% 0%, 33.5% 100%, 0% 100%);
+
+				&::after {
+					content: none;
+					display: none;
+				}
+			}
+		}
+
+		@include mobile {
+			@supports (clip-path: polygon(0 0, 100% 0%, 100% 16.5%, 0% 100%)) {
+				clip-path: polygon(0 0, 100% 0%, 100% 16.5%, 0% 100%);
+
+				&::after {
+					content: none;
+					display: none;
+				}
+			}
+		}
+
+		@include dirRtl {
+			left: auto;
+			right: 0;
+			transform: scale(-1, 1);
+		}
+	}
+
+	&__back {
+		display: inline-flex;
+		margin-bottom: vmin(17);
+		font-family: $font-secondary;
+		font-weight: 500;
+		font-size: vmin(14);
+		line-height: vmin(18);
+		color: rgba($color-white, 0.8);
+
+		svg {
+			margin-right: vmin(8);
+			width: vmin(24);
+			height: vmin(24);
+
+			@include laptop {
+				margin-right: px(8);
+				width: px(24);
+				height: px(24);
+			}
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: vmin(8);
+
+				@include laptop {
+					margin-left: px(8);
+				}
+			}
+		}
+
+		@include laptop {
+			margin-bottom: px(24);
+			font-size: px(14);
+			line-height: px(18);
+		}
+
+		@include hover {
+			color: $color-white;
+		}
+	}
+
+	&__title {
+		margin: 0;
+		margin-bottom: vmin(20);
+		font-size: vmin(40.5);
+		line-height: vmin(40.5);
+
+		&--0 {
+			margin-bottom: 0;
+		}
+
+		&--1 {
+			margin-bottom: vmin(-37.5);
+		}
+
+		&--2 {
+			margin-bottom: vmin(26);
+		}
+
+		&--3 {
+			margin-bottom: vmin(26);
+		}
+
+		@include laptop {
+			margin-bottom: px(20);
+			font-size: px(72);
+			line-height: px(72);
+
+			&--0 {
+				margin-bottom: 0;
+			}
+
+			&--1 {
+				margin-bottom: px(51);
+			}
+
+			&--2 {
+				margin-bottom: px(51);
+			}
+
+			&--3 {
+				margin-bottom: px(64);
+			}
+
+			[lang="pt"] & {
+				font-size: px(70);
+			}
+		}
+	}
+
+	&__text {
+		font-family: $font-secondary;
+		font-weight: 500;
+		font-size: vmin(14);
+		line-height: vmin(18);
+		letter-spacing: -0.02em;
+		color: rgba($color-white, 0.8);
+		/* stylelint-disable */
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-all;
+		word-break: break-word;
+		-ms-hyphens: auto;
+		-moz-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+		/* stylelint-enable */
+
+		p {
+			margin: vmin(18) 0;
+
+			@include laptop {
+				margin: px(18) 0;
+			}
+		}
+
+		a {
+			text-decoration: underline;
+
+			@include hover {
+				text-decoration: none;
+				color: $color-white;
+			}
+		}
+
+		@include laptop {
+			font-size: px(14);
+			line-height: px(18);
+		}
+	}
+
+	&__page {
+		position: relative;
+		border-bottom: 1px solid rgba($color-gray, 0.2);
+		padding: vmin(16) 0;
+		color: rgba($color-white, 0.4);
+		transition: $duration-normal;
+		pointer-events: none;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -1;
+			background: rgba($color-white, 0.2);
+			opacity: 0;
+			transition: $duration-normal;
+
+			// backdrop-filter: blur(48px);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: vmin(4);
+
+			@include laptop {
+				margin-bottom: px(10);
+			}
+		}
+
+		&.is-prev {
+			padding-bottom: vmin(11);
+			color: $color-white;
+			cursor: pointer;
+			pointer-events: auto;
+
+			@include laptop {
+				border-bottom-width: px(1);
+				padding-bottom: px(4);
+			}
+		}
+
+		&.is-error {
+			background-color: $color-red2;
+
+			&::before {
+				content: none;
+			}
+
+			.site__tab {
+				// stylelint-disable-next-line
+				pointer-events: auto !important;
+			}
+
+			.payment-method__secure,
+			.payment-method__secure-2,
+			.site__content {
+				display: none;
+			}
+		}
+
+		&--first {
+			margin-top: vmin(20);
+
+			@include laptop {
+				margin-top: 0;
+			}
+		}
+
+		&--platform {
+			pointer-events: none;
+
+			&.is-active,
+			&.is-prev {
+				pointer-events: none;
+			}
+		}
+
+		@include laptop {
+			padding: px(16) 0;
+
+			&:not(:last-child) {
+				margin-bottom: px(6);
+			}
+		}
+
+		@include hover {
+			color: $color-white;
+		}
+
+		@include active {
+			z-index: 1;
+			margin-right: vmin(-24);
+			margin-bottom: vmin(8);
+			margin-left: vmin(-24);
+			border-bottom-width: 0;
+			padding: vmin(24) vmin(24) vmin(32);
+			color: $color-white;
+			pointer-events: auto;
+
+			&::before {
+				opacity: 1;
+
+				@include laptop {
+					margin-bottom: px(16);
+					border-radius: px(3);
+				}
+			}
+
+			.site__tab-name-content {
+				display: initial;
+			}
+
+			@include laptop {
+				margin: px(30) 0 px(8);
+				border-bottom-width: px(1);
+				padding: px(32) px(24) px(40);
+			}
+		}
+	}
+
+	&__content {
+		display: none;
+	}
+
+	&__tab {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: vmin(24);
+		line-height: vmin(24);
+
+		.is-active & {
+			pointer-events: none;
+		}
+
+		@include mobile {
+			.is-error & {
+				flex-direction: column;
+			}
+		}
+
+		@include laptop {
+			font-size: px(36);
+			line-height: px(36);
+		}
+	}
+
+	&__tab-name {
+		width: 100%;
+
+		> em {
+			font-style: normal;
+
+			&:first-child:not(:last-child) {
+				.is-delivery &,
+				.is-prev & {
+					display: none;
+				}
+			}
+
+			&:nth-child(2) {
+				display: none;
+
+				.is-delivery &,
+				.is-prev & {
+					display: block;
+				}
+			}
+		}
+
+		.site__tab-name-content {
+			display: none;
+		}
+
+		@include laptop {
+			display: block;
+		}
+
+		@include mobile {
+			[data-id="payment-method"] & {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			[data-id="payment-method"].is-error & {
+				display: block;
+			}
+		}
+	}
+
+	&__tab-error {
+		display: none;
+
+		.is-error & {
+			display: block;
+		}
+	}
+
+	&__tab-description {
+		margin-top: vmin(4);
+		margin-bottom: vmin(24);
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(12);
+		line-height: vmin(15);
+		color: rgba($color-white, 0.8);
+
+		@include laptop {
+			margin-top: px(4);
+			margin-bottom: 0;
+			font-size: px(12);
+			line-height: px(15);
+		}
+	}
+
+	&__tab-button {
+		flex: 0 0 auto;
+		border: 1px solid $color-yellow;
+		width: 100%;
+		height: vmin(48);
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(14);
+		line-height: vmin(17);
+		white-space: nowrap;
+		color: $color-white;
+
+		.is-error & {
+			display: flex;
+		}
+
+		@include laptop {
+			width: px(200);
+			height: px(48);
+			font-size: px(14);
+			line-height: px(17);
+		}
+
+		@include hover {
+			background-color: $color-yellow;
+		}
+	}
+
+	&__tab-value {
+		display: flex;
+		flex: 1 0 auto;
+		align-items: center;
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(12);
+		line-height: vmin(15);
+
+		svg {
+			position: relative;
+			margin-left: vmin(8);
+			width: vmin(31);
+			height: vmin(31);
+
+			@include laptop {
+				margin-left: px(16);
+				width: px(38);
+				height: px(38);
+			}
+
+			@include dirRtl {
+				margin-right: vmin(8);
+
+				@include laptop {
+					margin-right: px(16);
+				}
+			}
+		}
+
+		span {
+			font-family: $font-secondary;
+			font-weight: 600;
+		}
+
+		// stylelint-disable-next-line
+		nobr {
+			margin-left: vmin(5);
+
+			@include laptop {
+				margin-left: px(5);
+			}
+
+			@include dirRtl {
+				display: inline-block;
+				direction: ltr;
+				margin-right: vmin(5);
+
+				@include laptop {
+					margin-right: px(5);
+				}
+			}
+		}
+
+		@include laptop {
+			font-size: px(12);
+			line-height: px(15);
+		}
+
+		img {
+			position: relative;
+			margin-left: vmin(8);
+			&.xbox-xs {
+				width: px(35);
+				height: px(15);
+				margin-bottom: px(2);
+			}
+			&.xbox-one {
+				width: px(101);
+				height: px(17);
+			}
+			&.ps {
+				width: px(81);
+				height: px(17);
+			}
+			@include laptop {
+				margin-left: px(16);
+				&.xbox-xs {
+					width: px(72);
+					height: px(31);
+					margin-bottom: px(1);
+				}
+				&.xbox-one {
+					width: px(155);
+					height: px(26);
+					margin-bottom: px(5);
+				}
+				&.ps {
+					width: px(139);
+					height: px(29);
+					margin-bottom: px(5);
+				}
+			}
+		}
+	}
+
+	&__list {
+		&--1 {
+			.site {
+				&__page {
+					@include active {
+						&::before {
+							@include laptop {
+								margin-bottom: 0;
+							}
+						}
+
+						@include laptop {
+							margin-bottom: px(16);
+							border-bottom-width: 0;
+							padding: px(32) px(24) px(24);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__note {
+		padding-top: px(17);
+		.site__text {
+			font-size: px(12);
+			line-height: px(15);
+			color: rgba($color-white, 0.6);
+			letter-spacing: .04em;
+    		text-align: justify;
+			ul {
+				padding-left: px(18);
+			}
+			li {
+				list-style: disc;
+			}
+		}
+	}
+
+	@include laptop {
+		padding: px(137) 0 px(16);
+	}
+}
+
+.site-grid {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+
+	@include mobile {
+		margin-right: ($grid-gutter-mobile / -2);
+		margin-left: ($grid-gutter-mobile / -2);
+	}
+
+	@include laptop {
+		margin-right: ($grid-gutter / -2);
+		margin-left: ($grid-gutter / -2);
+	}
+}
+
+@for $i from 1 through $grid-columns {
+	.site__col-#{$i} {
+		@include get-width($i, $grid-columns);
+		@include make-col($grid-gutter-mobile);
+
+		@include laptop {
+			@include make-col($grid-gutter);
+		}
+	}
+
+	.offset-#{$i} {
+		margin-left: ($i * 100% / $grid-columns);
+
+		@include dirRtl {
+			margin-right: ($i * 100% / $grid-columns);
+			margin-left: 0;
+		}
+	}
+}
+
+@include laptop {
+	@for $i from 1 through $grid-columns {
+		.site__col-lg-#{$i} {
+			@include get-width($i, $grid-columns);
+		}
+
+		.offset-lg-#{$i} {
+			margin-left: ($i * 100% / $grid-columns);
+
+			@include dirRtl {
+				margin-right: ($i * 100% / $grid-columns);
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+@include desktop {
+	@for $i from 1 through $grid-columns {
+		.site__col-xl-#{$i} {
+			@include get-width($i, $grid-columns);
+		}
+
+		.offset-xl-#{$i} {
+			margin-left: ($i * 100% / $grid-columns);
+
+			@include dirRtl {
+				margin-right: ($i * 100% / $grid-columns);
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+@include desktop-xl {
+	@for $i from 1 through $grid-columns {
+		.site__col-xxl-#{$i} {
+			@include get-width($i, $grid-columns);
+		}
+
+		.offset-xxl-#{$i} {
+			margin-left: ($i * 100% / $grid-columns);
+
+			@include dirRtl {
+				margin-right: ($i * 100% / $grid-columns);
+				margin-left: 0;
+			}
+		}
+	}
+}

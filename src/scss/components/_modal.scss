@@ -1,0 +1,205 @@
+.modal {
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 99;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+
+	&__bg {
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba($color-black, 0.4);
+		opacity: 0;
+		transition: $duration-normal;
+
+		.is-opened & {
+			opacity: 1;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		background-color: $color-dark;
+		visibility: hidden;
+		transform: translateX(100%);
+		transition: $duration-normal;
+
+		[data-scrollbar] {
+			height: 100%;
+		}
+
+		.is-opened & {
+			visibility: visible;
+			transform: none;
+		}
+	}
+
+	&__container {
+		position: relative;
+		z-index: 2;
+		margin: 0 auto;
+		padding: px(252) px(32) px(48);
+		width: 100%;
+		min-height: 100%;
+		pointer-events: auto;
+
+		@include mobile {
+			position: static;
+			padding: vmin(140) vmin(24) vmin(60);
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		right: vmin(32);
+		top: vmin(48);
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $color-gold;
+		border-radius: 50%;
+		padding: 0 vmin(12);
+		width: vmin(40);
+		height: vmin(40);
+		color: $color-gold;
+		background-color: transparent;
+		transition: $duration-normal;
+
+		@include laptop {
+			right: px(48);
+			top: px(32);
+			padding: 0 px(12);
+			width: px(40);
+			height: px(40);
+		}
+
+		@include dirRtl {
+			left: vmin(32);
+			right: auto;
+
+			@include laptop {
+				left: px(48);
+			}
+		}
+
+		@include hover {
+			border-color: $color-white;
+			color: $color-white;
+		}
+	}
+
+	&__tabs {
+		display: flex;
+		align-items: center;
+		margin-bottom: vmin(48);
+
+		@include laptop {
+			margin-bottom: px(48);
+		}
+	}
+
+	&__tab {
+		font-family: $font-primary;
+		font-size: vmin(40);
+		line-height: vmin(48);
+		color: rgba($color-white, 0.3);
+
+		&:not(:last-child) {
+			margin-right: vmin(32);
+
+			@include laptop {
+				margin-right: px(32);
+			}
+
+			@include dirRtl {
+				margin-right: 0;
+				margin-left: vmin(32);
+
+				@include laptop {
+					margin-left: px(32);
+				}
+			}
+		}
+
+		[data-lang="ru"] & {
+			font-family: $font-primaryRU;
+		}
+
+		@include active {
+			color: $color-white;
+			pointer-events: none;
+		}
+
+		@include laptop {
+			font-size: px(48);
+			line-height: px(48);
+
+			[data-lang="fr"] & {
+				font-size: px(42);
+			}
+		}
+
+		@include mobile {
+			[data-lang="pt"] &,
+			[data-lang="ru"] & {
+				font-size: vmin(36);
+			}
+
+			[data-lang="es"] &,
+			[data-lang="fr"] & {
+				font-size: vmin(32);
+			}
+		}
+	}
+
+	&__form-button {
+		position: relative;
+		margin-top: vmin(48);
+		border-radius: 2px;
+		padding: vmin(22) vmin(20) vmin(18);
+		width: 100%;
+		font-size: vmin(24);
+		line-height: vmin(24);
+		letter-spacing: vmin(0.6);
+		text-align: center;
+		color: $color-white;
+		background-color: $color-gold;
+
+		@include laptop {
+			margin-top: px(24);
+			padding: px(22) px(20) px(18) px(38);
+			font-size: px(24);
+			line-height: px(24);
+			letter-spacing: px(0.6);
+		}
+
+		@include hover {
+			background-color: $color-yellow3;
+		}
+	}
+
+	&.is-opened {
+		pointer-events: auto;
+	}
+
+	@include laptop {
+		max-width: px(520);
+	}
+
+	@include active {
+		z-index: 100;
+	}
+}

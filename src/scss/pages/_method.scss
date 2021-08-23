@@ -1,0 +1,164 @@
+.method {
+	display: flex;
+	margin: 0 vmin(-5);
+	padding: vmin(11) 0 0;
+
+	&__card {
+		position: relative;
+		flex: 0 0 calc(50% - #{vmin(10)});
+		margin: vmin(5);
+		border-radius: vmin(3);
+		padding: vmin(24) vmin(16) vmin(17);
+		max-width: calc(50% - #{vmin(10)});
+		color: $color-white;
+
+		&.soon {
+			opacity: 0.4;
+			cursor: default;
+			pointer-events: none;
+		}
+
+		&--green {
+			background-color: $color-green;
+		}
+
+		&--red {
+			background-color: $color-red;
+		}
+
+		@include laptop {
+			flex: 0 0 calc(50% - #{px(10)});
+			margin: px(5);
+			border-radius: px(3);
+			padding: px(16) px(16) px(24);
+			max-width: calc(50% - #{px(10)});
+		}
+	}
+
+	&__card-header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__card-name {
+		font-size: vmin(24);
+		line-height: vmin(24);
+
+		@include mobile {
+			[data-lang="es"] &,
+			[data-lang="nl"] &,
+			[data-lang="fr"] &,
+			[data-lang="it"] & {
+				margin-bottom: vmin(20);
+
+				@media (orientation: landscape) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		@include laptop {
+			font-size: px(24);
+			line-height: px(24);
+		}
+	}
+
+	&__card-soon {
+		padding-top: vmin(1);
+		padding-right: vmin(15);
+		font-family: $font-secondary;
+		font-size: vmin(14);
+		line-height: vmin(17);
+
+		@include mobile {
+			position: absolute;
+			right: 0;
+			top: vmin(25);
+
+			[data-lang="de"] & {
+				font-size: vmin(10);
+			}
+
+			[data-lang="it"] & {
+				font-size: vmin(13);
+			}
+
+			[data-lang="es"] &,
+			[data-lang="ru"] &,
+			[data-lang="nl"] &,
+			[data-lang="fr"] &,
+			[data-lang="it"] & {
+				top: vmin(50);
+
+				@media (orientation: landscape) {
+					top: vmin(25);
+				}
+			}
+
+			@include dirRtl {
+				left: 0;
+				right: auto;
+				padding-right: 0;
+				padding-left: vmin(15);
+			}
+		}
+
+		@include laptop {
+			padding-top: px(1);
+			padding-right: 0;
+			font-size: px(14);
+			line-height: px(17);
+		}
+	}
+
+	&__card-content {
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(12);
+		line-height: vmin(15);
+
+		p {
+			margin: vmin(4) 0;
+
+			@include laptop {
+				margin: px(4) 0;
+			}
+		}
+
+		@include laptop {
+			font-size: px(12);
+			line-height: px(15);
+		}
+	}
+
+	&__card-button {
+		position: relative;
+		margin-top: vmin(24);
+		border: px(1) solid rgba($color-white, 0.4);
+		border-radius: px(2);
+		padding: vmin(9);
+		width: 100%;
+		font-weight: 600;
+		font-size: vmin(14);
+		line-height: vmin(17);
+		text-align: center;
+		color: $color-white;
+		background-color: transparent;
+
+		@include laptop {
+			margin-top: px(16);
+			padding: px(9);
+			font-size: px(14);
+			line-height: px(17);
+		}
+
+		@include hover {
+			color: $color-dark;
+			background-color: $color-white;
+		}
+	}
+
+	@include laptop {
+		padding: px(6) px(8) 0;
+	}
+}

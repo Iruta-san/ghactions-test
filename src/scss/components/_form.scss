@@ -1,0 +1,133 @@
+.form {
+	&__message {
+		margin-bottom: vmin(32);
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(32);
+		line-height: vmin(38);
+		/* stylelint-disable */
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-all;
+		word-break: break-word;
+		-ms-hyphens: auto;
+		-moz-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+		/* stylelint-enable */
+
+		.text {
+			margin-bottom: vmin(16);
+
+			@include laptop {
+				margin-bottom: px(16);
+			}
+		}
+
+		&--error {
+			color: $color-red;
+		}
+
+		@include laptop {
+			margin-bottom: px(32);
+			font-size: px(32);
+			line-height: px(38);
+		}
+	}
+
+	&__group {
+		margin-top: vmin(24);
+
+		@include laptop {
+			display: flex;
+			align-items: center;
+			margin-top: px(24);
+		}
+	}
+
+	&__col {
+		flex: 0 0 100%;
+		max-width: 100%;
+
+		@include laptop {
+			flex: 0 0 50%;
+			padding: 0 px(12);
+			max-width: 50%;
+
+			&:first-child {
+				padding-left: 0;
+
+				@include dirRtl {
+					padding-right: 0;
+					padding-left: px(12);
+				}
+			}
+
+			&:last-child {
+				padding-right: 0;
+
+				@include dirRtl {
+					padding-right: px(12);
+					padding-left: 0;
+				}
+			}
+		}
+	}
+
+	&__button {
+		position: relative;
+		margin-top: vmin(48);
+		border-radius: 2px;
+		padding: vmin(14) vmin(60);
+		font-size: vmin(24);
+		line-height: vmin(24);
+		text-align: center;
+		color: $color-white;
+		background-color: $color-gold;
+
+		@include laptop {
+			margin-top: px(48);
+			padding: px(14) px(93);
+			font-size: px(20);
+			line-height: px(20);
+		}
+
+		@include hover {
+			background-color: $color-yellow3;
+		}
+	}
+
+	&__terms {
+		margin-top: vmin(16);
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(12);
+		line-height: vmin(15);
+		color: rgba($color-white, 0.8);
+
+		a {
+			@include hover {
+				text-decoration: underline;
+			}
+		}
+
+		@include laptop {
+			margin-top: px(16);
+			font-size: px(12);
+			line-height: px(15);
+		}
+	}
+
+	&--delivery {
+		.form__message {
+			margin-top: vmin(64);
+			margin-bottom: vmin(-48);
+
+			@include laptop {
+				margin-top: px(72);
+				margin-bottom: px(-48);
+			}
+		}
+	}
+}

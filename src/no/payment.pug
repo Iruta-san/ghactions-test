@@ -1,0 +1,38 @@
+extends ../pug/base
+
+prepend vars
+	- title = 'Betalingsmetoder for FIFA 21-mynter | ROYALFUT'
+	- description = 'Informasjon om mulige betalingsmetoder for FUT 21-mynter i ditt område | ROYALFUT'
+
+append vars
+	- html.attrs.lang = 'no'
+	- body.attrs = {"data-barba": "wrapper"}
+	- meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover'
+	- link.icon384x384 = '/android-chrome-384x384.png'
+	- link.icon192x192 = '/android-chrome-192x192.png'
+	- link.appleTouchIcon180x180 = '/apple-touch-icon.png'
+	- link.icon = '/favicon.ico'
+	- link.icon32x32 = '/favicon-32x32.png'
+	- link.icon16x16 = '/favicon-16x16.png'
+	- link.manifest = '/site.webmanifest'
+	- meta.msapplicationTileImage = '/mstile-150x150.png'
+
+block content
+	include ./base
+
+	picture.site__media.is-hidden
+		img(src=`${baseDir}images/bg-.jpg` alt="bg picture")
+
+	.site.is-hidden(data-barba="container" data-barba-namespace="page")
+		include ../pug/components/header
+
+		main
+			.container
+				.site-grid
+					include ../pug/pages/no/payment
+					include ../pug/components/sidebar
+
+		include ../pug/components/footer
+		include ../pug/components/cookie
+
+		include ../pug/components/signin

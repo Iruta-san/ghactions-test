@@ -1,0 +1,646 @@
+.main {
+	&__calc {
+		padding: px(32) px(24) px(33);
+		border-radius: 3px;
+		background-color: rgba(255, 255, 255, 0.1);
+		//backdrop-filter: blur(48px);
+
+		&-wrap {
+			display: flex;
+			align-items: center;
+			margin-top: px(85);
+
+			@include mobile {
+				margin-top: 5.8vw;
+			}
+		}
+
+		&-inputs {
+			input {
+				font-size: 36px;
+				line-height: 36px;
+				@include mobile {
+					font-size: 9.36vw;
+					line-height: 9.36vw;
+				}
+
+				&.arabic{
+					direction: ltr;
+					text-align: end;
+				}
+			}
+		}
+
+		&__transfer-trade {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid #616172;
+			background-color: transparent;
+			border-radius: px(3);
+			width: px(324);
+			padding: px(12);
+			font-size: px(24);
+			color: $color-white;
+
+			@include mobile {
+				width: 100%;
+				font-size: 6.4vw;
+				padding: 3.2vw;
+			}
+
+			span {
+				background: rgba(255, 255, 255, 0.1);
+				margin-left: px(8);
+				border-radius: px(10);
+				font-family: $font-secondary;
+				font-size: px(12);
+				font-weight: 600;
+				color: $color-yellow3;
+				padding: px(3) px(6) px(2) px(7);
+
+				@include mobile {
+					font-size: 3.2vw;
+					margin-left: 2.13vw;
+					padding: 0.78vw 1.56vw 0.52vw 1.82vw;
+					border-radius: 2.6vw;
+				}
+			}
+		}
+
+		@include mobile {
+			background-color: transparent;
+			padding: 0;
+			backdrop-filter: none;
+			margin-top: 18.66vw;
+		}
+
+		@include desktop {
+			width: 704px;
+		}
+
+		&__sign {
+			max-width: px(257);
+			margin-left: px(30);
+			font-family: $font-secondary;
+			font-size: px(12);
+			line-height: px(14);
+			font-weight: 600;
+			color: rgba(255, 255, 255, 0.6);
+
+			@include mobile {
+				display: none;
+			}
+		}
+	}
+
+	&__radios-block {
+		display: flex;
+		flex-wrap: wrap;
+		border: 1px solid rgba(#fff, 0.2);
+		border-radius: 3px;
+		padding: px(3);
+		margin-bottom: px(32);
+	}
+
+	&__radio {
+		position: relative;
+		flex: 0 0 50%;
+		width: 50%;
+		label {
+			display: block;
+			width: 100%;
+			padding: 12px 0;
+			font-size: px(24);
+			line-height: px(24);
+			text-align: center;
+			border: 1px solid rgba(#fff, 0);
+			border-radius: 3px;
+			cursor: pointer;
+			transition: 0.3s;
+
+			@include mobile {
+				padding: 4.133vw 0 3.633vw 10vw;
+				font-size: 6.4vw;
+				line-height: 6.4vw;
+			}
+		}
+
+		input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			&:checked {
+				~ label {
+					background-color: #003087;
+					border-color: rgba(#fff, 0.05);
+				}
+			}
+		}
+
+		&:last-child {
+			input {
+				&:checked {
+					~ label {
+						background-color: #52b043;
+					}
+				}
+			}
+		}
+	}
+
+	&__count-block {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: px(22);
+
+		@include mobile {
+			margin-bottom: 8.8vw;
+		}
+
+		button {
+			padding: px(10) 0;
+			font-family: $font-secondary;
+			font-weight: 600;
+			font-size: px(12);
+			background-color: rgba(255, 255, 255, 0.2);
+			color: #FFF;
+			border: none;
+			border-radius: 4px;
+
+			@include mobile {
+				margin-right: px(8);
+				width: 13.8vw;
+				height: 9.333vw;
+				font-size: 3.2vw;
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+
+			@include laptop {
+				margin-right: px(4);
+				width: px(44);
+				font-size: px(11);
+				&:last-child {
+					margin-right: 0;
+				}
+				@include dirRtl {
+					&:last-child {
+						margin-right: px(4);
+					}
+					&:first-child {
+						margin-right: 0;
+					}
+				}
+			}
+
+			@include desktop {
+				margin-right: px(8);
+				width: px(50);
+				font-size: px(12);
+			}
+		}
+	}
+
+	&__calc-inputs {
+		display: flex;
+		flex-wrap: wrap;
+
+		& > div {
+			width: 50%;
+			flex: 0 0 50%;
+
+			@include mobile {
+				width: 100%;
+				flex: 0 0 100%;
+			}
+
+			&:first-child {
+				.input__border-right {
+					@include laptop {
+						display: none;
+					}
+				}
+			}
+
+			&:last-child {
+				.input__border-left {
+					@include laptop {
+						border-radius: 0;
+					}
+					border-radius: 3px 0 0 3px;
+				}
+			}
+		}
+	}
+
+	&__content {
+		position: relative;
+
+		@include laptop {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__button {
+		position: relative;
+		flex: 1 0 vmin(327);
+		border-radius: 2px;
+		padding: vmin(15) vmin(5);
+		font-size: vmin(24);
+		line-height: vmin(24);
+		text-align: center;
+		color: $color-white;
+		background-color: $color-gold;
+
+		@include mobile {
+			margin-top: 34px;
+			width: 100%;
+		}
+
+		&::before {
+			//content: "";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			z-index: -1;
+			width: vmin(375);
+			height: vmin(168);
+			background-image: url("../images/main-bg.png");
+			background-size: contain;
+			background-repeat: no-repeat;
+			transform: translate(-50%, -50%);
+			pointer-events: none;
+
+			@include laptop {
+				width: px(380);
+				height: px(170);
+			}
+
+			@include retina {
+				background-image: url("../images/main-bg@2x.png");
+			}
+		}
+
+		span {
+			@include laptop {
+				margin-top: px(4);
+				margin-bottom: px(-4);
+			}
+		}
+
+		@include laptop {
+			flex: 1 0 px(270);
+			padding: px(14) px(5);
+			max-width: px(270);
+			font-size: px(36);
+			line-height: px(36);
+		}
+
+		@include desktop {
+			max-width: px(313);
+			flex: 1 0 px(327);
+		}
+
+		@include hover {
+			background-color: $color-yellow3;
+		}
+	}
+	[lang="ar"] & {
+		.main__content-icon.for-laptop {
+		// 	display: none;
+			transform: rotate(180deg);
+		}
+		// .main__content-icon.for-mobile {
+		// 	display: block !important;
+		// 	@include laptop {
+		// 		height: px(30);
+		// 	}
+		// }
+	}
+
+	&__content-icon {
+		margin: vmin(21) 0;
+		margin-left: vmin(18);
+		width: vmin(30);
+		height: vmin(24);
+
+
+		@include laptop {
+			margin: px(-10) px(13) 0 px(17);
+			width: px(42);
+			height: px(12);
+		}
+
+		@include dirRtl {
+			margin-right: vmin(28);
+			margin-left: 0;
+
+			@include laptop {
+				margin: px(-10) px(17) 0 px(13);
+			}
+
+			@include mobile {
+				margin-right: vmin(260);
+			}
+		}
+	}
+
+	&__content-text {
+		font-family: $font-secondary;
+		font-weight: 600;
+		font-size: vmin(12);
+		line-height: vmin(15);
+		letter-spacing: -0.01em;
+		color: $color-yellow3;
+
+		@include laptop {
+			margin-top: px(-10);
+			font-size: px(12);
+			line-height: px(15);
+		}
+
+		@include mobile {
+			margin-top: vmin(-42);
+			margin-left: vmin(64);
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: vmin(60);
+
+		@include laptop {
+			margin-top: px(85);
+			max-width: px(595);
+		}
+	}
+
+	&__card {
+		position: relative;
+		max-width: vmin(154);
+
+		&-media {
+			position: absolute;
+			left: vmin(-7);
+			top: vmin(-6);
+			z-index: -1;
+			max-width: vmin(28);
+
+			@include laptop {
+				left: px(-4);
+				top: px(-18);
+				max-width: px(40);
+			}
+
+			@include dirRtl {
+				left: 0;
+				right: vmin(-7);
+				transform: scale(-1, 1);
+
+				@include laptop {
+					right: px(-4);
+				}
+			}
+		}
+
+		&-title {
+			margin-bottom: vmin(6);
+			font-size: vmin(24);
+			line-height: vmin(24);
+
+			@include laptop {
+				margin-bottom: px(8);
+				font-size: px(36);
+				line-height: px(36);
+			}
+		}
+
+		&-text {
+			font-family: $font-secondary;
+			font-weight: 600;
+			font-size: vmin(12);
+			line-height: vmin(15);
+			letter-spacing: -0.01em;
+			color: rgba($color-white, 0.6);
+
+			@include laptop {
+				font-size: px(12);
+				line-height: px(15);
+			}
+		}
+
+		&:nth-child(1),
+		&:nth-child(2) {
+			margin-bottom: vmin(48);
+		}
+
+		&:nth-child(2n) {
+			margin-left: auto;
+
+			@include dirRtl {
+				margin-right: auto;
+				margin-left: 0;
+			}
+		}
+
+		@include laptop {
+			padding-left: px(12);
+			max-width: px(260);
+
+			&:nth-child(1),
+			&:nth-child(2) {
+				margin-bottom: px(71);
+			}
+		}
+
+		@include dirRtl {
+			@include laptop {
+				padding-right: 0;
+				padding-left: px(12);
+			}
+		}
+	}
+
+	&__buy {
+		margin-top: vmin(55);
+
+		&-head {
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: vmin(32);
+
+			@include laptop {
+				margin-bottom: px(37);
+			}
+		}
+
+		&-title {
+			flex: 0 0 auto;
+			padding-right: px(32);
+			max-width: 100%;
+			font-size: vmin(24);
+			line-height: vmin(24);
+
+			span {
+				color: $color-gold;
+			}
+
+			@include laptop {
+				max-width: none;
+				font-size: px(36);
+				line-height: px(36);
+			}
+
+			@include dirRtl {
+				padding-right: 0;
+			}
+		}
+
+		&-button {
+			flex: 1 0 0;
+			padding: px(12) px(16);
+			width: 100%;
+			max-width: px(217);
+			font-family: $font-secondary;
+			font-weight: 600;
+			font-size: vmin(12);
+			line-height: vmin(15);
+			color: $color-gold;
+			background-color: rgba($color-gold, 0.1);
+
+			@include laptop {
+				font-size: px(12);
+				line-height: px(15);
+			}
+		}
+
+		&-container {
+			display: flex;
+			flex-wrap: wrap;
+
+			@include laptop {
+				width: calc(100% + 32px);
+			}
+		}
+
+		&-block {
+			@include laptop {
+				padding-right: px(32);
+				padding-left: 0;
+
+				@include dirRtl {
+					padding-right: 0;
+					padding-left: px(32);
+				}
+			}
+		}
+
+		&-number {
+			position: relative;
+			font-family: $font-primaryRU;
+			font-weight: 600;
+			font-size: vmin(36);
+			line-height: vmin(36);
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: vmin(7.6);
+				z-index: 1;
+				width: 100%;
+				height: px(2);
+				background: linear-gradient(270deg, #52b043 0%, #fff 94.55%);
+
+				@include laptop {
+					bottom: px(7);
+				}
+
+				@include dirRtl {
+					background: linear-gradient(270deg, #fff 0%, #52b043 94.55%);
+				}
+			}
+
+			@include laptop {
+				font-size: px(36);
+				line-height: px(36);
+			}
+		}
+
+		&-text {
+			padding-top: vmin(4);
+			padding-bottom: vmin(24);
+			font-family: $font-secondary;
+			font-weight: 600;
+			font-size: vmin(12);
+			line-height: vmin(15);
+			color: rgba($color-white, 0.6);
+
+			@include laptop {
+				padding-top: px(16);
+				padding-bottom: 0;
+				font-size: px(12);
+				line-height: px(15);
+			}
+		}
+
+		@include laptop {
+			margin-top: px(86);
+			padding-left: px(12);
+		}
+	}
+}
+
+.faq {
+	padding-top: vmin(55);
+	@include laptop {
+		padding-left: px(12);
+		padding-top: px(90);
+	}
+}
+
+.ps-icon {
+	width: auto;
+	height: auto;
+}
+
+.calc-ps-icon {
+	background-image: url("../../images/main/ps_icon.svg");
+	background-repeat: no-repeat;
+
+	@include mobile {
+		background-size: 8.5vw;
+		background-position: 2vw calc(50% - 3px);
+	}
+
+	@include laptop {
+		background-position: 22% calc(50% - 3px);
+	}
+
+	@include desktop {
+		background-position: 25% calc(50% - 3px);
+	}
+}
+
+.calc-xbox-icon {
+	background-image: url("../../images/main/xbox_icon.svg");
+	background-repeat: no-repeat;
+
+	@include mobile {
+		background-size: 6.4vw;
+		background-position: 12vw calc(50% - 1px);
+	}
+
+	@include laptop {
+		background-position: 33% calc(50% - 1px);
+	}
+
+	@include desktop {
+		background-position: 36% calc(50% - 1px);
+	}
+}

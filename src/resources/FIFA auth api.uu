@@ -1,0 +1,90 @@
+POST ec2-52-15-199-223.us-east-2.compute.amazonaws.com:9000/users
+Request Body:
+{
+    "user": {
+        "username": "someuser",
+        "password": "Yh435231",
+        "email": "someemail@gmail.com"
+    }
+}
+Response Body:
+{
+    "user": {
+        "email": "someemail@gmail.com",
+        "username": "someuser",
+        "createdAt": "2020-09-20T12:34:01.53315",
+        "updatedAt": "2020-09-20T12:34:01.53315",
+        "token": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA2MzQwNDIsInNlY3VyaXR5X3VzZXJfaWQiOiIxNSJ9.gz-5ExwYO6ajRnAdnSYX2-hBZb2XMwJ2Cgsqah6vUK0"
+    }
+}
+
+
+GET ec2-52-15-199-223.us-east-2.compute.amazonaws.com:9000/profiles/someuser
+Response Body:
+{
+    "profile": {
+        "username": "someuser",
+        "bio": null,
+        "image": null
+    }
+}
+
+
+POST ec2-52-15-199-223.us-east-2.compute.amazonaws.com:9000/users/login
+Request Body:
+{
+    "user": {
+        "email": "someemail@gmail.com",
+        "password": "Yh435231"
+    }
+}
+Response Body:
+{
+    "user": {
+        "email": "someemail@gmail.com",
+        "username": "someuser",
+        "createdAt": "2020-09-20T12:34:01.53315",
+        "updatedAt": "2020-09-20T12:34:01.53315",
+        "token": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA2MzQyNjUsInNlY3VyaXR5X3VzZXJfaWQiOiIxNSJ9.v1n-0d-4_tAZuLOdxddhTud7Bd0_NyFkc4WaMZsapfM"
+    }
+}
+
+
+GET ec2-52-15-199-223.us-east-2.compute.amazonaws.com:9000/user
+Header: Authorization -> Token eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA2MzQyNjUsInNlY3VyaXR5X3VzZXJfaWQiOiIxNSJ9.v1n-0d-4_tAZuLOdxddhTud7Bd0_NyFkc4WaMZsapfM
+Response Body:
+{
+    "user": {
+        "email": "someemail@gmail.com",
+        "username": "someuser",
+        "createdAt": "2020-09-20T12:34:01.53315",
+        "updatedAt": "2020-09-20T12:34:01.53315",
+        "token": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA2MzQyNjUsInNlY3VyaXR5X3VzZXJfaWQiOiIxNSJ9.v1n-0d-4_tAZuLOdxddhTud7Bd0_NyFkc4WaMZsapfM"
+    }
+}
+
+PUT ec2-52-15-199-223.us-east-2.compute.amazonaws.com:9000/user
+Header: Authorization -> Token eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA2MzQyNjUsInNlY3VyaXR5X3VzZXJfaWQiOiIxNSJ9.v1n-0d-4_tAZuLOdxddhTud7Bd0_NyFkc4WaMZsapfM
+Request Body:
+
+{
+    "user": {
+        "username": "someuser",
+        "password": "Yh435231",
+        "email": "someemail2@gmail.com",
+        "bio": "bio",
+        "image": "image"
+    }
+}
+Response Body:
+{
+    "user": {
+        "email": "someemail2@gmail.com",
+        "username": "someuser",
+        "createdAt": "2020-09-20T12:34:01.53315",
+        "updatedAt": "2020-09-20T12:41:30.113885",
+        "bio": "bio",
+        "image": "image",
+        "token": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDA2MzQyNjUsInNlY3VyaXR5X3VzZXJfaWQiOiIxNSJ9.v1n-0d-4_tAZuLOdxddhTud7Bd0_NyFkc4WaMZsapfM"
+    }
+}

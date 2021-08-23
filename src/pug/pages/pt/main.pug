@@ -1,0 +1,63 @@
+section.main.site__col-12.site__col-lg-7.site__col-xl-6.site__col-xxl-5.offset-xl-1.offset-xxl-2
+	h1.site__title.site__title--1
+		| RÁPIDO E SEGURO
+		br
+		| COMPRAR AS TUAS MOEDAS FUT 21
+	include ../mainCalc
+	//.main__content
+	//	a.btn.main__button.js-buy(href=`${url}order.html`)
+	//		span.btn__content
+	//			| COMPRAR MOEDAS
+	//	svg.main__content-icon.for-laptop(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 42 12")
+	//		path(d="M.99 5.26l3.509 5.717M.989 5.26L6.123.798M.99 5.26c16.65 2.164 34.038.884 40.65-.026" fill="none" stroke="#E5B713")
+	//	svg.main__content-icon.for-mobile(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 24")
+	//		path(d="M5.886.778L.583 4.887M5.886.777l4.992 4.618M5.886.778C5.886 18.5 18 23.5 30 23.5" fill="none" stroke="#E5B713")
+	//	.main__content-text
+	//		| O nosso sistema é totalmente automatizado, #[br]portanto entregamos moedas em qualquer momento, 24/7.
+
+	.main__info
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/purple.svg` alt="Figure")
+			.main__card-title OPÇÃO MAIS SEGURA
+			.main__card-text Não te preocupes com as possíveis sanções da EA. Estamos a trabalhar com um algoritmo melhorado, em que 1 fornecedor compra apenas 1 carta de jogador durante a execução do teu pedido.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/blue.svg` alt="Figure")
+			.main__card-title RÁPIDO E SIMPLES
+			.main__card-text O nosso sistema é totalmente automatizado, portanto entregamos moedas o mais rapidamente possível. Apenas um par de cliques - e nós fazemos o resto.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/red.svg` alt="Figure")
+			.main__card-title ENORME EXPERIÊNCIA
+			.main__card-text Vendemos moedas desde os dias do FIFA 17, mas fazíamo-lo para compradores de revenda. Considerando toda a experiência, oferecemos o melhor produto para jogadores FUT.
+
+		.main__card
+			picture.main__card-media
+				img(src=`${baseDir}images/main/yellow.svg` alt="Figure")
+			.main__card-title PREÇOS MAIS BAIXOS
+			.main__card-text Quaisquer tarifas são cobertas por nós. Os nossos preços são dos mais baixos da Internet.
+
+	.main__buy
+		.main__buy-head
+			.main__buy-title COMO FUNCIONAA ENTREGA DA
+				|  #[span  NEGOCIAÇÃO COMFORT]?
+			//a.main__buy-button See how transfer mode works
+		.main__buy-container
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 1
+				.main__buy-text
+					| Escolhe a plataforma e a quantidade de moedas.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 2
+				.main__buy-text
+					| Insere o teu e-mail, palavra-passe e os códigos de backup.
+			.main__buy-block.site__col-lg-4.site__col-12
+				.main__buy-number 3
+				.main__buy-text
+					| As moedas estão no teu clube FUT. Tem um bom jogo!
+
+	include ./faq
+	script(async src="https://f.royalfut.com/2abe5b48d2731f8b7232d53248d2ef44.js")

@@ -1,0 +1,419 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	font-weight: 400;
+}
+
+html {
+	position: relative;
+	overflow-x: hidden;
+	box-sizing: border-box;
+	font-family: $font-primary;
+	font-weight: 400;
+	color: $color-white;
+	background-color: $color-dark;
+	scroll-behavior: smooth;
+
+	&[data-lang="ru"] {
+		font-family: $font-primaryRU;
+		font-weight: 700;
+	}
+
+	&.is-lock-scroll,
+	&.is-lock-scroll body {
+		overflow: hidden;
+
+		@include mobile {
+			position: fixed;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	text-decoration-skip: objects;
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+
+	// stylelint-disable-next-line
+	@supports (-webkit-touch-callout: none) {
+		// stylelint-disable-next-line
+		height: -webkit-fill-available;
+	}
+}
+
+main {
+	flex: 1;
+}
+
+a:focus,
+a:visited,
+a:active,
+a:hover,
+textarea:focus,
+textarea:visited,
+textarea:active,
+textarea:hover,
+input:focus,
+input:visited,
+input:active,
+input:hover,
+select:focus,
+select:visited,
+select:active,
+select:hover,
+button:focus,
+button:visited,
+button:active,
+button:hover {
+	outline: 0;
+	outline-style: none;
+}
+
+a,
+button {
+	outline: none;
+	transition: $duration-normal;
+	cursor: pointer;
+}
+
+[disabled],
+.is-disabled {
+	cursor: disabled;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+svg {
+	flex: 0 0 auto;
+	width: 100%;
+	height: 100%;
+	fill: currentColor;
+}
+
+figure,
+picture {
+	display: inline-block;
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+button * {
+	position: relative;
+}
+
+button:visited *,
+button:active *,
+button:focus * {
+	position: relative;
+	left: 0;
+	top: 0;
+	transform: translate(0, 0);
+}
+
+fieldset {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	text-align: center;
+	background-color: transparent;
+	transition: $duration-normal;
+	user-select: none;
+
+	&__content {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 100%;
+		color: currentColor;
+		transform: translateZ(0);
+
+		svg {
+			margin: 0 10px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.lozad:not(.is-loaded) {
+	max-height: 500px;
+}
+
+.container {
+	position: relative;
+	margin: 0 auto;
+	padding: 0 vmin(24);
+	width: 100%;
+
+	@include laptop {
+		padding: 0 px(48);
+	}
+}
+
+// пока непонятный хак для скролла в IE
+.is-browser-ie {
+	overflow: hidden;
+	height: 100%;
+
+	body {
+		overflow: auto;
+		height: 100%;
+	}
+}
+
+// stylelint-disable
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	border: 0;
+	-webkit-text-fill-color: $color-white;
+	color: $color-white;
+	box-shadow: 0 0 0px 1000px $color-dark inset;
+	transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+.loader {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	transform: translate(-50%, -50%);
+	transition: 1s;
+
+	&-content {
+		position: relative;
+		left: auto;
+		top: auto;
+		margin: 50px auto;
+		transform: none;
+	}
+
+	&__text {
+		position: absolute;
+		left: 50%;
+		top: vmin(60);
+		width: vmin(136);
+		height: vmin(36);
+		text-align: center;
+		color: #4e1e7f;
+		transform: translateX(-50%);
+
+		/* stylelint-disabled */
+		svg {
+			width: 100% !important;
+			height: 100% !important;
+
+			path {
+				animation-name: none !important;
+			}
+		}
+		/* stylelint-enable */
+
+		@include laptop {
+			top: px(62);
+			width: px(136);
+			height: px(36);
+		}
+	}
+
+	svg {
+		display: block;
+		margin: 0 auto;
+		width: px(300);
+		height: px(300);
+		color: #a82df9;
+
+		path {
+			animation-name: pulse;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+
+			&.path-7 {
+				animation-delay: -1s;
+			}
+
+			&.path-6 {
+				animation-delay: -0.875s;
+			}
+
+			&.path-5 {
+				animation-delay: -0.75s;
+			}
+
+			&.path-4 {
+				animation-delay: -0.625s;
+			}
+
+			&.path-3 {
+				animation-delay: -0.5s;
+			}
+
+			&.path-2 {
+				animation-delay: -0.375s;
+			}
+
+			&.path-1 {
+				animation-delay: -0.25s;
+			}
+
+			&.path-0 {
+				animation-delay: -0.125s;
+			}
+		}
+
+		@include mobile {
+			width: vmin(150);
+			height: vmin(150);
+		}
+	}
+}
+
+.loader-custom {
+	display: flex!important;
+	background-color: #12142b;
+	z-index: 1000;
+}
+
+.cookie {
+	position: fixed;
+	right: vmin(16);
+	bottom: vmin(24);
+	z-index: 9;
+	border-radius: 3px;
+	padding: vmin(16);
+	width: calc(100% - #{vmin(32)});
+	color: $color-white;
+	background: $color-purple;
+
+	&__title {
+		font-size: vmin(24);
+		line-height: vmin(24);
+
+		@include laptop {
+			font-size: px(24);
+			line-height: px(24);
+		}
+	}
+
+	&__text {
+		margin-top: vmin(8);
+		font-family: $font-secondary;
+		font-weight: 500;
+		font-size: vmin(14);
+		line-height: vmin(16);
+
+		@include laptop {
+			margin-top: px(8);
+			font-size: px(14);
+			line-height: px(16);
+		}
+	}
+
+	&__button {
+		margin-top: vmin(16);
+		border: 0;
+		padding: vmin(15);
+		width: 100%;
+		font-size: vmin(24);
+		line-height: vmin(24);
+		color: $color-white;
+		background-color: $color-gold;
+
+		@include laptop {
+			margin-top: px(16);
+			padding: px(15);
+			font-size: px(24);
+			line-height: px(24);
+		}
+	}
+
+	@include laptop {
+		right: px(72);
+		bottom: px(72);
+		padding: px(16);
+		width: px(366);
+	}
+}
+
+/* stylelint-disable declaration-no-important */
+div#fg_bubble {
+	@include dirRtl {
+		left: 20px !important;
+		right: auto !important;
+	}
+}
+
+/* stylelint-enable */
+
+@keyframes pulse {
+	0% {
+		opacity: 0.1;
+	}
+
+	30% {
+		opacity: 0.8;
+	}
+
+	100% {
+		opacity: 0.1;
+	}
+}

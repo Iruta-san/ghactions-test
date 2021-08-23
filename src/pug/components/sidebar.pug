@@ -1,0 +1,152 @@
+aside.sidebar.is-fade
+	.sidebar__content
+		.sidebar__trustpilot
+			+svg('trustpilot-logo')
+
+		.review__stars(title=`Rating 5 stars`)
+			- for (var x = 0; x < 5; x++)
+				.review__star.is-active
+					+svg('star-box')
+
+		.review__score
+			| TrustScore&nbsp;
+			b
+				| 4.8&nbsp;|&nbsp;
+				a(href=content[locale].commentUrl target="_blank")
+					| 83&nbsp;#[!=content[locale].commentReviews]
+
+		ul.sidebar__slider
+			li.sidebar__item
+				+review({
+					image: 'msSunspot.png',
+					name: 'ms Sunspot',
+					title: '250 000 ps4',
+					text: 'Wanted to my first Legend in FUT and bought Nakata 85 ahahaha',
+					reviews: '267',
+				})
+
+			li.sidebar__item
+				+review({
+					image: 'AdrieCordi.png',
+					name: 'Adrie Cordi',
+					title: 'Nice work guys:D',
+					text: 'Nice work guys:D They delivered me 360k in about a hour. I need this coins to complete SBC Son 89.',
+					reviews: '267',
+				})
+
+			li.sidebar__item
+				+review({
+					image: 'ShagK.png',
+					name: 'Shag K.',
+					title: '210k order',
+					text: 'i were need duo french cb&prime;s from leipzig to continue WL great and fast and i got the coins in about 10 mins!!!!',
+					reviews: '267',
+				})
+
+			li.sidebar__item
+				+review({
+					image: 'Laffe.png',
+					name: 'Laffe',
+					title: 'Simple order and fast delivery',
+					text: 'Good service which I will recommend to my freinds. Packs, packs, packs 🍀 Wish your coins get me lucky. 400k PS4',
+					reviews: '267',
+				})
+
+			li.sidebar__item
+				+review({
+					image: 'emustafa.png',
+					name: 'e mustafa',
+					title: '150k Xbox One',
+					text: 'Fase and cheap. for martial-bruno f. link 🔴',
+					reviews: '267',
+				})
+			
+			li.sidebar__item
+				+review({
+					image: 'MigaCol.png',
+					name: 'MigaCol',
+					title: 'I had some doubts about the service',
+					text: 'I had some doubts about the service. 1. Payment proceeds in euro, but I had a pound card. I thought it will be more than i expect due convertation. But I think I lost less than 1%, I don&prime;t even count. 2. It was cheap. 2. I used to be a customer of on giant FUTcoin seller (w/o names, it might look rather bad), so I thought it will be same time of delivery. But they delivered me 220k less than a 40mins! Bought for packopening at ps4',
+					stars: 4,
+					star: 4,
+					reviews: '267',
+				})
+
+			li.sidebar__item
+				+review({
+					image: 'Jeremy.png',
+					name: 'Jeremy',
+					title: 'Guuuys, nice:)',
+					text: 'Fur F sake! It&prime;s too cheap for this kinda service. 610k ps4 for big WL upgrade',
+					reviews: '267',
+				})
+			
+			li.sidebar__item
+				+review({
+					image: 'empty.png',
+					name: 'Alessandro Bellia',
+					title: 'Great service and feedback!!',
+					text: '',
+					reviews: '267',
+				})
+			
+			li.sidebar__item
+				+review({
+					image: 'empty.png',
+					name: 'Ramon',
+					title: 'Cheapy',
+					text: 'Woderful!',
+					reviews: '267',
+				})
+			
+			li.sidebar__item
+				+review({
+					image: 'GrandSpenderMoney.png',
+					name: 'GrandSpenderMoney',
+					title: 'Great! Fast!',
+					text: 'I really happy with this service🙈 140k for goretzka if',
+					reviews: '267',
+				})
+
+			li.sidebar__item
+				+review({
+					image: 'SebaFIFAPlay.png',
+					name: 'SebaFIFAPlay',
+					title: 'I was confused by reviews',
+					text: 'But bought my first coins in your webstore:D 25k for the first time. I will add this coins to Lewa SBC',
+					reviews: '267',
+				})
+			
+			li.sidebar__item
+				+review({
+					image: 'JuriIogan.png',
+					name: 'Juri Iogan',
+					title: '350k XOne',
+					text: '4* only for price for Xbox One coins. Fast - less than a hour delivery',
+					stars: 4,
+					star: 4,
+					reviews: '267',
+				})
+
+			li.sidebar__item
+				+review({
+					image: 'empty.png',
+					name: 'Oleg',
+					title: '30k, playing on PS4',
+					text: 'Bought new Totw link from Inter Milano - Hakimi and Vidal 😛',
+					reviews: '267',
+				})
+		
+		.sidebar__dots
+			- let i = 0
+				while i < 13
+					.sidebar__dot
+					- i++
+
+	.sidebar__logos
+		.sidebar__visa
+			img(src=`${baseDir}images/visa.png` alt="visa")
+		.sidebar__mastercard
+			img(src=`${baseDir}images/mastercard.png` alt="mastercard")
+		.sidebar__sslsecured
+			img(src=`${baseDir}images/sslsecured.png` alt="sslsecured")
